@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playing Cards</title>
+  <link href="./styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <p class="eyebrow">FIELD NOTES / 02 — CARD EDITION</p>
+
+    <h1>The Card Table</h1>
+
+    <p class="description">
+      Build a webpage displaying a collection of playing cards.
+      Use Flexbox to arrange the cards, align their elements, and create a responsive layout with suit selection.
+    </p>
+  </header>
+  <main id="playing-cards">
+    <div class="suit-selector">
+
+      <input type="radio" id="spades" name="suit" checked>
+      <label class="spades-tab" for="spades">♠ Spades</label>
+
+      <input type="radio" id="hearts" name="suit">
+      <label class="hearts-tab" for="hearts">♥ Hearts</label>
+
+      <input type="radio" id="clubs" name="suit">
+      <label class="clubs-tab" for="clubs">♣ Clubs</label>
+
+      <input type="radio" id="diamonds" name="suit">
+      <label class="diamonds-tab" for="diamonds">♦ Diamonds</label>
+
+    </div>
+
+    <div class="card spades black-suit">
+      <div class="left">
+        <span>A</span>
+        <span>♠</span>
+      </div>
+      <div class="middle">
+        <span>♠</span>
+      </div>
+      <div class="right">
+        <span class="reverse">A</span>
+        <span class="reverse">♠</span>
+      </div>
+    </div>
+
+    <div class="card spades black-suit">
+      <div class="left">
+        <span>2</span>
+        <span>♠</span>
+      </div>
+      <div class="middle">
+        <span>♠</span>
+        <span class="reverse">♠</span>
+      </div>
+      <div class="right">
+        <span class="reverse">2</span>
+        <span class="reverse">♠</span>
+      </div>
+    </div>
+
+    <div class="card spades black-suit">
+      <div class="left">
+        <span>3</span>
+        <span>♠</span>
+      </div>
+      <div class="middle">
+        <span>♠</span>
+        <span>♠</span>
+        <span class="reverse">♠</span>
+      </div>
+      <div class="right">
+        <span class="reverse">3</span>
+        <span class="reverse">♠</span>
+      </div>
+    </div>
+
+    <div class="card spades black-suit">
+      <div class="left">
+        <span>4</span>
+        <span>♠</span>
+      </div>
+      <div class="middle">
+        <span>♠ ♠</span>
+        <span class="reverse">♠ ♠</span>
+      </div>
+      <div class="right">
+        <span class="reverse">4</span>
+        <span class="reverse">♠</span>
+      </div>
+    </div>
+
+    <div class="card spades black-suit">
+      <div class="left">
+        <span>5</span>
+        <span>♠</span>
+      </div>
+      <div class="middle">
+        <span>♠ ♠</span>
+        <span>♠</span>
+        <span class="reverse">♠ ♠</span>
+      </div>
+      <div class="right">
+        <span class="reverse">5</span>
+        <span class="reverse">♠</span>
+      </div>
+    </div>
+
+    <div class="card spades black-suit">
+      <div class="left">
+        <span>6</span>
+        <span>♠</span>
+      </div>
+      <div class="middle">
+        <span>♠ ♠</span>
+        <span>♠ ♠</span>
+        <span class="reverse">♠ ♠</span>
+      </div>
+      <div class="right">
+        <span class="reverse">6</span>
+        <span class="reverse">♠</span>
+      </div>
+    </div>
+
+    <div class="card spades black-suit">
+      <div class="left">
+        <span>7</span>
+        <span>♠</span>
+      </div>
+      <div class="middle">
+        <span>♠ ♠</span>
+        <span>♠</span>
+        <span>♠ ♠</span>
+        <span class="reverse">♠ ♠</span>
+      </div>
+      <div class="right">
+        <span class="reverse">7</span>
+        <span class="reverse">♠</span>
+      </div>
+    </div>
+
+    <div class="card spades black-suit">
+      <div class="left">
+        <span>8</span>
+        <span>♠</span>
+      </div>
+      <div class="middle">
+        <span>♠ ♠</span>
+        <span>♠ ♠</span>
+        <span class="reverse">♠ ♠</span>
+        <span class="reverse">♠ ♠</span>
+      </div>
+      <div class="right">
+        <span class="reverse">8</span>
+        <span class="reverse">♠</span>
+      </div>
+    </div>
+
+    <div class="card spades black-suit">
+      <div class="left">
+        <span>9</span>
+        <span>♠</span>
+      </div>
+      <div class="middle">
+        <span>♠ ♠</span>
+        <span>♠ ♠</span>
+        <span>♠</span>
+        <span class="reverse">♠ ♠</span>
+        <span class="reverse">♠ ♠</span>
+      </div>
+      <div class="right">
+        <span class="reverse">9</span>
+        <span class="reverse">♠</span>
+      </div>
+    </div>
+
+    <div class="card spades black-suit">
+      <div class="left">
+        <span>10</span>
+        <span>♠</span>
+      </div>
+      <div class="middle">
+        <span>♠ ♠</span>
+        <span>♠ ♠</span>
+        <span>♠ ♠</span>
+        <span class="reverse">♠ ♠</span>
+        <span class="reverse">♠ ♠</span>
+      </div>
+      <div class="right">
+        <span class="reverse">10</span>
+        <span class="reverse">♠</span>
+      </div>
+    </div>
+
+
+    <div class="card hearts red-suit">
+      <div class="left">
+        <span>A</span>
+        <span>♥</span>
+      </div>
+      <div class="middle">
+        <span>♥</span>
+      </div>
+      <div class="right">
+        <span class="reverse">A</span>
+        <span class="reverse">♥</span>
+      </div>
+    </div>
+
+    <div class="card hearts red-suit">
+      <div class="left">
+        <span>2</span>
+        <span>♥</span>
+      </div>
+      <div class="middle">
+        <span>♥</span>
+        <span class="reverse">♥</span>
+      </div>
+      <div class="right">
+        <span class="reverse">2</span>
+        <span class="reverse">♥</span>
+      </div>
+    </div>
+
+    <div class="card hearts red-suit">
+      <div class="left">
+        <span>3</span>
+        <span>♥</span>
+      </div>
+      <div class="middle">
+        <span>♥</span>
+        <span>♥</span>
+        <span class="reverse">♥</span>
+      </div>
+      <div class="right">
+        <span class="reverse">3</span>
+        <span class="reverse">♥</span>
+      </div>
+    </div>
+
+    <div class="card hearts red-suit">
+      <div class="left">
+        <span>4</span>
+        <span>♥</span>
+      </div>
+      <div class="middle">
+        <span>♥ ♥</span>
+        <span class="reverse">♥ ♥</span>
+      </div>
+      <div class="right">
+        <span class="reverse">4</span>
+        <span class="reverse">♥</span>
+      </div>
+    </div>
+
+    <div class="card hearts red-suit">
+      <div class="left">
+        <span>5</span>
+        <span>♥</span>
+      </div>
+      <div class="middle">
+        <span>♥ ♥</span>
+        <span>♥</span>
+        <span class="reverse">♥ ♥</span>
+      </div>
+      <div class="right">
+        <span class="reverse">5</span>
+        <span class="reverse">♥</span>
+      </div>
+    </div>
+
+    <div class="card hearts red-suit">
+      <div class="left">
+        <span>6</span>
+        <span>♥</span>
+      </div>
+      <div class="middle">
+        <span>♥ ♥</span>
+        <span>♥ ♥</span>
+        <span class="reverse">♥ ♥</span>
+      </div>
+      <div class="right">
+        <span class="reverse">6</span>
+        <span class="reverse">♥</span>
+      </div>
+    </div>
+
+    <div class="card hearts red-suit">
+      <div class="left">
+        <span>7</span>
+        <span>♥</span>
+      </div>
+      <div class="middle">
+        <span>♥ ♥</span>
+        <span>♥</span>
+        <span>♥ ♥</span>
+        <span class="reverse">♥ ♥</span>
+      </div>
+      <div class="right">
+        <span class="reverse">7</span>
+        <span class="reverse">♥</span>
+      </div>
+    </div>
+
+    <div class="card hearts red-suit">
+      <div class="left">
+        <span>8</span>
+        <span>♥</span>
+      </div>
+      <div class="middle">
+        <span>♥ ♥</span>
+        <span>♥ ♥</span>
+        <span class="reverse">♥ ♥</span>
+        <span class="reverse">♥ ♥</span>
+      </div>
+      <div class="right">
+        <span class="reverse">8</span>
+        <span class="reverse">♥</span>
+      </div>
+    </div>
+
+    <div class="card hearts red-suit">
+      <div class="left">
+        <span>9</span>
+        <span>♥</span>
+      </div>
+      <div class="middle">
+        <span>♥ ♥</span>
+        <span>♥ ♥</span>
+        <span>♥</span>
+        <span class="reverse">♥ ♥</span>
+        <span class="reverse">♥ ♥</span>
+      </div>
+      <div class="right">
+        <span class="reverse">9</span>
+        <span class="reverse">♥</span>
+      </div>
+    </div>
+
+    <div class="card hearts red-suit">
+      <div class="left">
+        <span>10</span>
+        <span>♥</span>
+      </div>
+      <div class="middle">
+        <span>♥ ♥</span>
+        <span>♥ ♥</span>
+        <span>♥ ♥</span>
+        <span class="reverse">♥ ♥</span>
+        <span class="reverse">♥ ♥</span>
+      </div>
+      <div class="right">
+        <span class="reverse">10</span>
+        <span class="reverse">♥</span>
+      </div>
+    </div>
+
+
+    <div class="card clubs black-suit">
+      <div class="left">
+        <span>A</span>
+        <span>♣</span>
+      </div>
+      <div class="middle">
+        <span>♣</span>
+      </div>
+      <div class="right">
+        <span class="reverse">A</span>
+        <span class="reverse">♣</span>
+      </div>
+    </div>
+
+    <div class="card clubs black-suit">
+      <div class="left">
+        <span>2</span>
+        <span>♣</span>
+      </div>
+      <div class="middle">
+        <span>♣</span>
+        <span class="reverse">♣</span>
+      </div>
+      <div class="right">
+        <span class="reverse">2</span>
+        <span class="reverse">♣</span>
+      </div>
+    </div>
+
+    <div class="card clubs black-suit">
+      <div class="left">
+        <span>3</span>
+        <span>♣</span>
+      </div>
+      <div class="middle">
+        <span>♣</span>
+        <span>♣</span>
+        <span class="reverse">♣</span>
+      </div>
+      <div class="right">
+        <span class="reverse">3</span>
+        <span class="reverse">♣</span>
+      </div>
+    </div>
+
+    <div class="card clubs black-suit">
+      <div class="left">
+        <span>4</span>
+        <span>♣</span>
+      </div>
+      <div class="middle">
+        <span>♣ ♣</span>
+        <span class="reverse">♣ ♣</span>
+      </div>
+      <div class="right">
+        <span class="reverse">4</span>
+        <span class="reverse">♣</span>
+      </div>
+    </div>
+
+    <div class="card clubs black-suit">
+      <div class="left">
+        <span>5</span>
+        <span>♣</span>
+      </div>
+      <div class="middle">
+        <span>♣ ♣</span>
+        <span>♣</span>
+        <span class="reverse">♣ ♣</span>
+      </div>
+      <div class="right">
+        <span class="reverse">5</span>
+        <span class="reverse">♣</span>
+      </div>
+    </div>
+
+    <div class="card clubs black-suit">
+      <div class="left">
+        <span>6</span>
+        <span>♣</span>
+      </div>
+      <div class="middle">
+        <span>♣ ♣</span>
+        <span>♣ ♣</span>
+        <span class="reverse">♣ ♣</span>
+      </div>
+      <div class="right">
+        <span class="reverse">6</span>
+        <span class="reverse">♣</span>
+      </div>
+    </div>
+
+    <div class="card clubs black-suit">
+      <div class="left">
+        <span>7</span>
+        <span>♣</span>
+      </div>
+      <div class="middle">
+        <span>♣ ♣</span>
+        <span>♣</span>
+        <span>♣ ♣</span>
+        <span class="reverse">♣ ♣</span>
+      </div>
+      <div class="right">
+        <span class="reverse">7</span>
+        <span class="reverse">♣</span>
+      </div>
+    </div>
+
+    <div class="card clubs black-suit">
+      <div class="left">
+        <span>8</span>
+        <span>♣</span>
+      </div>
+      <div class="middle">
+        <span>♣ ♣</span>
+        <span>♣ ♣</span>
+        <span class="reverse">♣ ♣</span>
+        <span class="reverse">♣ ♣</span>
+      </div>
+      <div class="right">
+        <span class="reverse">8</span>
+        <span class="reverse">♣</span>
+      </div>
+    </div>
+
+    <div class="card clubs black-suit">
+      <div class="left">
+        <span>9</span>
+        <span>♣</span>
+      </div>
+      <div class="middle">
+        <span>♣ ♣</span>
+        <span>♣ ♣</span>
+        <span>♣</span>
+        <span class="reverse">♣ ♣</span>
+        <span class="reverse">♣ ♣</span>
+      </div>
+      <div class="right">
+        <span class="reverse">9</span>
+        <span class="reverse">♣</span>
+      </div>
+    </div>
+
+    <div class="card clubs black-suit">
+      <div class="left">
+        <span>10</span>
+        <span>♣</span>
+      </div>
+      <div class="middle">
+        <span>♣ ♣</span>
+        <span>♣ ♣</span>
+        <span>♣ ♣</span>
+        <span class="reverse">♣ ♣</span>
+        <span class="reverse">♣ ♣</span>
+      </div>
+      <div class="right">
+        <span class="reverse">10</span>
+        <span class="reverse">♣</span>
+      </div>
+    </div>
+
+
+    <div class="card diamonds red-suit">
+      <div class="left">
+        <span>A</span>
+        <span>♦</span>
+      </div>
+      <div class="middle">
+        <span>♦</span>
+      </div>
+      <div class="right">
+        <span class="reverse">A</span>
+        <span class="reverse">♦</span>
+      </div>
+    </div>
+
+    <div class="card diamonds red-suit">
+      <div class="left">
+        <span>2</span>
+        <span>♦</span>
+      </div>
+      <div class="middle">
+        <span>♦</span>
+        <span class="reverse">♦</span>
+      </div>
+      <div class="right">
+        <span class="reverse">2</span>
+        <span class="reverse">♦</span>
+      </div>
+    </div>
+
+    <div class="card diamonds red-suit">
+      <div class="left">
+        <span>3</span>
+        <span>♦</span>
+      </div>
+      <div class="middle">
+        <span>♦</span>
+        <span>♦</span>
+        <span class="reverse">♦</span>
+      </div>
+      <div class="right">
+        <span class="reverse">3</span>
+        <span class="reverse">♦</span>
+      </div>
+    </div>
+
+    <div class="card diamonds red-suit">
+      <div class="left">
+        <span>4</span>
+        <span>♦</span>
+      </div>
+      <div class="middle">
+        <span>♦ ♦</span>
+        <span class="reverse">♦ ♦</span>
+      </div>
+      <div class="right">
+        <span class="reverse">4</span>
+        <span class="reverse">♦</span>
+      </div>
+    </div>
+
+    <div class="card diamonds red-suit">
+      <div class="left">
+        <span>5</span>
+        <span>♦</span>
+      </div>
+      <div class="middle">
+        <span>♦ ♦</span>
+        <span>♦</span>
+        <span class="reverse">♦ ♦</span>
+      </div>
+      <div class="right">
+        <span class="reverse">5</span>
+        <span class="reverse">♦</span>
+      </div>
+    </div>
+
+    <div class="card diamonds red-suit">
+      <div class="left">
+        <span>6</span>
+        <span>♦</span>
+      </div>
+      <div class="middle">
+        <span>♦ ♦</span>
+        <span>♦ ♦</span>
+        <span class="reverse">♦ ♦</span>
+      </div>
+      <div class="right">
+        <span class="reverse">6</span>
+        <span class="reverse">♦</span>
+      </div>
+    </div>
+
+    <div class="card diamonds red-suit">
+      <div class="left">
+        <span>7</span>
+        <span>♦</span>
+      </div>
+      <div class="middle">
+        <span>♦ ♦</span>
+        <span>♦</span>
+        <span>♦ ♦</span>
+        <span class="reverse">♦ ♦</span>
+      </div>
+      <div class="right">
+        <span class="reverse">7</span>
+        <span class="reverse">♦</span>
+      </div>
+    </div>
+
+    <div class="card diamonds red-suit">
+      <div class="left">
+        <span>8</span>
+        <span>♦</span>
+      </div>
+      <div class="middle">
+        <span>♦ ♦</span>
+        <span>♦ ♦</span>
+        <span class="reverse">♦ ♦</span>
+        <span class="reverse">♦ ♦</span>
+      </div>
+      <div class="right">
+        <span class="reverse">8</span>
+        <span class="reverse">♦</span>
+      </div>
+    </div>
+
+    <div class="card diamonds red-suit">
+      <div class="left">
+        <span>9</span>
+        <span>♦</span>
+      </div>
+      <div class="middle">
+        <span>♦ ♦</span>
+        <span>♦ ♦</span>
+        <span>♦</span>
+        <span class="reverse">♦ ♦</span>
+        <span class="reverse">♦ ♦</span>
+      </div>
+      <div class="right">
+        <span class="reverse">9</span>
+        <span class="reverse">♦</span>
+      </div>
+    </div>
+
+    <div class="card diamonds red-suit">
+      <div class="left">
+        <span>10</span>
+        <span>♦</span>
+      </div>
+      <div class="middle">
+        <span>♦ ♦</span>
+        <span>♦ ♦</span>
+        <span>♦ ♦</span>
+        <span class="reverse">♦ ♦</span>
+        <span class="reverse">♦ ♦</span>
+      </div>
+      <div class="right">
+        <span class="reverse">10</span>
+        <span class="reverse">♦</span>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>

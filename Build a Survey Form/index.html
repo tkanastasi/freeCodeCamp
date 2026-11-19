@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hiking Experience Survey</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        position: relative;
+        margin: 0;
+        padding: 40px 20px;
+        background: #f7f4ec;
+        color: #24231f;
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+      }
+
+      body::before,
+      body::after {
+        position: fixed;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      body::before {
+        content: "EXPLORE MORE • TAKE THE LONG WAY";
+        top: 35%;
+        left: 24px;
+        writing-mode: vertical-rl;
+        font-size: 11px;
+        font-weight: bold;
+        letter-spacing: 3px;
+        color: #b96347;
+      }
+
+      body::after {
+        content: "✳";
+        right: 5%;
+        bottom: 12%;
+        font-size: 90px;
+        color: #a3ad7d;
+        animation: slow-rotate 20s linear infinite;
+      }
+
+      header,
+      main {
+        position: relative;
+        z-index: 1;
+      }
+
+      header {
+        position: relative;
+        overflow: hidden;
+        max-width: 900px;
+        margin: 0 auto 38px;
+        padding: 48px;
+        background: #24231f;
+        color: #f7f4ec;
+        border: 2px solid #24231f;
+        border-radius: 24px;
+        box-shadow: 8px 8px 0 #a3ad7d;
+      }
+
+      header::after {
+        content: "✳";
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #a3ad7d;
+        font-size: 110px;
+        animation: floating 5s ease-in-out infinite;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin: 0 0 22px;
+        padding: 6px 12px;
+        background: #b96347;
+        border-radius: 4px;
+        color: #fffaf2;
+        font-size: 11px;
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+
+      #title {
+        position: relative;
+        z-index: 1;
+        max-width: 750px;
+        margin: 0 0 16px;
+        font-family: Georgia, serif;
+        font-size: clamp(38px, 6vw, 68px);
+        font-weight: normal;
+        line-height: 1.05;
+        letter-spacing: -2px;
+      }
+
+      #description {
+        position: relative;
+        z-index: 1;
+        max-width: 570px;
+        margin: 0;
+        color: #d9d5ca;
+        font-size: 17px;
+      }
+
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      #survey-form {
+        padding: 42px;
+        background: #fffefa;
+        border: 2px solid #24231f;
+        border-radius: 24px;
+        box-shadow: 10px 10px 0 #b96347;
+      }
+
+      #survey-form > br {
+        display: none;
+      }
+
+      #survey-form > label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 17px;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 14px 16px;
+        margin-bottom: 24px;
+        background: #f7f4ec;
+        border: 1.5px solid #24231f;
+        border-radius: 10px;
+        color: #24231f;
+        font-family: inherit;
+        font-size: 17px;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #b96347;
+        box-shadow: 4px 4px 0 #e9bda7;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: #89877e;
+      }
+
+      textarea {
+        display: block;
+        min-height: 130px;
+        resize: vertical;
+      }
+
+      select {
+        appearance: none;
+        -webkit-appearance: none;
+        padding-right: 52px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2324231f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 18px center;
+        background-size: 18px;
+      }
+
+      fieldset {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin: 18px 0 30px;
+        padding: 24px;
+        background: #edf0e3;
+        border: 1.5px solid #24231f;
+        border-radius: 14px;
+      }
+
+      fieldset legend {
+        grid-column: 1 / -1;
+        max-width: 100%;
+        margin-left: 8px;
+        padding: 8px 14px;
+        background: #fffefa;
+        border: 1.5px solid #24231f;
+        border-radius: 9px;
+        font-family: Georgia, serif;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 1.35;
+      }
+
+      fieldset br {
+        display: none;
+      }
+
+      .choice-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        min-width: 0;
+        min-height: 85px;
+        padding: 14px;
+        background: #fffefa;
+        border: 1.5px solid #24231f;
+        border-radius: 12px;
+        color: #24231f;
+        font-size: 17px;
+        line-height: 1.4;
+        cursor: pointer;
+        box-shadow: none;
+        transition:
+          background-color 0.2s,
+          border-color 0.2s,
+          box-shadow 0.2s,
+          transform 0.2s;
+      }
+
+      .choice-card input {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        width: 24px;
+        height: 24px;
+        margin: 0;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .choice-card::before {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 30px;
+        flex-shrink: 0;
+        background: #f7f4ec;
+        border: 1.5px solid #24231f;
+        border-radius: 7px;
+      }
+
+      .choice-card::after {
+        content: "✓";
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        color: #fffefa;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 1;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .choice-card:not(.radio-card):hover,
+      .choice-card:not(.radio-card):has(input:checked) {
+        background: #a3ad7d;
+        box-shadow: 5px 5px 0 #24231f;
+        transform: translate(-2px, -2px);
+      }
+
+      .choice-card:not(.radio-card):active {
+        transform: translate(0, 0);
+        box-shadow: 2px 2px 0 #24231f;
+      }
+
+      .choice-card:not(.radio-card):has(input:checked)::before {
+        background: #24231f;
+        border-color: #24231f;
+      }
+
+      .choice-card:not(.radio-card):has(input:checked)::after {
+        opacity: 1;
+      }
+
+      .radio-card {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        min-height: 65px;
+        padding: 14px;
+        background: #fffefa;
+        border: 1.5px solid #24231f;
+        border-radius: 12px;
+        font-size: 17px;
+      }
+
+      .radio-card input {
+        top: 50%;
+        left: 14px;
+        width: 22px;
+        height: 22px;
+        transform: translateY(-50%);
+      }
+
+      .radio-card::before {
+        width: 22px;
+        height: 22px;
+        background: #f7f4ec;
+        border: 1.5px solid #24231f;
+        border-radius: 50%;
+      }
+
+      .radio-card::after {
+        content: none;
+      }
+
+      .radio-card:hover,
+      .radio-card:has(input:checked) {
+        background: #b96347;
+        border-color: #24231f;
+        box-shadow: 5px 5px 0 #24231f;
+        transform: translate(-2px, -2px);
+      }
+
+      .radio-card:active {
+        transform: translate(0, 0);
+        box-shadow: 2px 2px 0 #24231f;
+      }
+
+      .radio-card:has(input:checked)::before {
+        background: #24231f;
+        border-color: #24231f;
+      }
+
+      .choice-card:has(input:focus-visible) {
+        outline: 3px solid #b96347;
+        outline-offset: 3px;
+      }
+
+      #submit {
+        width: 100%;
+        padding: 16px 20px;
+        background: #a3ad7d;
+        border: 2px solid #24231f;
+        border-radius: 10px;
+        color: #24231f;
+        font-size: 17px;
+        font-weight: bold;
+        cursor: pointer;
+        transition:
+          background-color 0.2s,
+          color 0.2s,
+          box-shadow 0.2s,
+          transform 0.2s;
+      }
+
+      #submit:hover {
+        background: #b96347;
+        color: #24231f;
+        box-shadow: 5px 5px 0 #24231f;
+        transform: translate(-2px, -2px);
+      }
+
+      #submit:active {
+        transform: translate(0, 0);
+        box-shadow: none;
+      }
+
+      @keyframes floating {
+        0%, 100% {
+          transform: translateY(0) rotate(0);
+        }
+
+        50% {
+          transform: translateY(12px) rotate(20deg);
+        }
+      }
+
+      @keyframes slow-rotate {
+        from {
+          transform: rotate(0);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media (max-width: 1200px) {
+        body::before {
+          display: none;
+        }
+      }
+
+      @media (max-width: 700px) {
+        body {
+          padding: 20px 14px;
+        }
+
+        body::after {
+          display: none;
+        }
+
+        header {
+          padding: 32px 24px;
+        }
+
+        header::after {
+          right: 10px;
+          font-size: 65px;
+        }
+
+        #title {
+          font-size: 42px;
+        }
+
+        #description {
+          font-size: 16px;
+        }
+
+        #survey-form {
+          padding: 24px 18px;
+          box-shadow: 6px 6px 0 #a3ad7d;
+        }
+
+        fieldset {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 12px;
+          padding: 20px 16px;
+        }
+
+        fieldset legend {
+          margin-left: 4px;
+          padding: 8px 12px;
+          font-size: 19px;
+        }
+
+        .choice-card {
+          min-height: 85px;
+          padding: 14px;
+          gap: 10px;
+          font-size: 16px;
+        }
+
+        .choice-card input {
+          top: 14px;
+          left: 14px;
+        }
+
+        .choice-card::before {
+          width: 30px;
+          height: 30px;
+        }
+
+        .choice-card::after {
+          top: 14px;
+          left: 14px;
+          width: 30px;
+          height: 30px;
+        }
+
+        .radio-card {
+          min-height: 85px;
+          padding: 14px;
+          gap: 12px;
+        }
+
+        .radio-card input {
+          top: 50%;
+          left: 14px;
+        }
+
+        .radio-card::before {
+          width: 22px;
+          height: 22px;
+        }
+      }
+
+      @media (max-width: 400px) {
+        fieldset {
+          grid-template-columns: 1fr;
+        }
+
+        .choice-card {
+          min-height: 85px;
+        }
+
+        #title {
+          font-size: 36px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <p class="eyebrow">FIELD NOTES / 01 — HIKING EDITION</p>
+
+      <h1 id="title">Hiking Experience Survey</h1>
+
+      <p id="description">
+        Thank you for joining our hiking trip! Please share your experience
+        to help us improve future adventures.
+      </p>
+    </header>
+
+    <main>
+      <form id="survey-form">
+        <label id="name-label" for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          required
+        />
+
+        <br /><br />
+
+        <label id="email-label" for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+
+        <br /><br />
+
+        <label id="number-label" for="number">Age (optional)</label>
+        <input
+          type="number"
+          id="number"
+          name="number"
+          placeholder="Enter your age"
+          min="18"
+          max="99"
+        />
+
+        <br /><br />
+
+        <label for="dropdown">Select your hiking level:</label>
+
+        <select id="dropdown" name="dropdown" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="beginner">
+            Beginner (first hikes, easy trails)
+          </option>
+          <option value="intermediate">
+            Intermediate (some experience, moderate hikes)
+          </option>
+          <option value="advanced">
+            Advanced (regular hiking, difficult routes)
+          </option>
+          <option value="expert">
+            Expert (high-altitude or technical hikes)
+          </option>
+        </select>
+
+        <br /><br />
+
+        <fieldset>
+          <legend>Would you join another hiking trip with us?</legend>
+
+          <label class="choice-card radio-card">
+            <input
+              id="def-option"
+              type="radio"
+              name="hike-with-us"
+              value="definitely"
+              required
+            />
+            <span>Definitely</span>
+          </label>
+
+          <label class="choice-card radio-card">
+            <input
+              id="may-option"
+              type="radio"
+              name="hike-with-us"
+              value="maybe"
+            />
+            <span>Maybe</span>
+          </label>
+
+          <label class="choice-card radio-card">
+            <input
+              id="n-sure-option"
+              type="radio"
+              name="hike-with-us"
+              value="n-sure"
+            />
+            <span>Not sure</span>
+          </label>
+        </fieldset>
+
+        <br /><br />
+
+        <fieldset>
+          <legend>
+            What would you like to see improved? (Check all that apply)
+          </legend>
+
+          <label class="choice-card">
+            <input
+              type="checkbox"
+              id="trails"
+              name="improvements"
+              value="trails"
+            />
+            <span>Trails</span>
+          </label>
+
+          <label class="choice-card">
+            <input
+              type="checkbox"
+              id="organization"
+              name="improvements"
+              value="organization"
+            />
+            <span>Organization</span>
+          </label>
+
+          <label class="choice-card">
+            <input
+              type="checkbox"
+              id="guides"
+              name="improvements"
+              value="guides"
+            />
+            <span>Guides</span>
+          </label>
+
+          <label class="choice-card">
+            <input
+              type="checkbox"
+              id="food"
+              name="improvements"
+              value="food"
+            />
+            <span>Food</span>
+          </label>
+
+          <label class="choice-card">
+            <input
+              type="checkbox"
+              id="transportation"
+              name="improvements"
+              value="transportation"
+            />
+            <span>Transportation</span>
+          </label>
+
+          <label class="choice-card">
+            <input
+              type="checkbox"
+              id="difficulty"
+              name="improvements"
+              value="difficulty"
+            />
+            <span>Difficulty level</span>
+          </label>
+
+          <label class="choice-card">
+            <input
+              type="checkbox"
+              id="break-time"
+              name="improvements"
+              value="break-time"
+            />
+            <span>Break time</span>
+          </label>
+
+          <label class="choice-card">
+            <input
+              type="checkbox"
+              id="equipment"
+              name="improvements"
+              value="equipment"
+            />
+            <span>Equipment</span>
+          </label>
+
+          <label class="choice-card">
+            <input
+              type="checkbox"
+              id="communication"
+              name="improvements"
+              value="communication"
+            />
+            <span>Communication</span>
+          </label>
+
+          <label class="choice-card">
+            <input
+              type="checkbox"
+              id="other"
+              name="improvements"
+              value="other"
+            />
+            <span>Other</span>
+          </label>
+        </fieldset>
+
+        <br /><br />
+
+        <label for="comments">Any comments?</label>
+        <br />
+
+        <textarea
+          id="comments"
+          name="comments"
+          rows="5"
+          cols="30"
+          placeholder="Share your thoughts and suggestions..."
+        ></textarea>
+
+        <br /><br />
+
+        <button id="submit" type="submit">Submit</button>
+      </form>
+    </main>
+  </body>
+</html>
