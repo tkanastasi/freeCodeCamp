@@ -300,6 +300,24 @@ The shadow should create a tactile, slightly printed or layered appearance.
 
 Use decorative elements to reinforce the editorial identity.
 
+### Project identity and brief
+
+For each certification project, add a compact uppercase project label in the page header using this format:
+
+```text
+PROJECTS / [PROJECT NUMBER] — [PROJECT FOLDER NAME]
+```
+
+Use the project number provided by the user and the project folder name, converted to uppercase. Keep the slash and em dash as shown.
+
+Style this small uppercase label with a semibold font weight (`600`) so the letter spacing stays clear and the text does not look overly heavy.
+
+Place the label `PROJECT BRIEF` immediately above the page description. Write the description only after the user provides the project brief and tests. Summarize the learning objective and the main HTML, CSS, accessibility, or interaction techniques in a concise sentence or two, based on that project’s requirements.
+
+Add a real, keyboard-accessible link to the current project folder in the user's GitHub repository. Label it `VIEW SOURCE ON GITHUB · @[USERNAME]`, preserving the user's GitHub handle. On wide screens, place it vertically along the page edge as a useful editorial detail. At the breakpoint where edge decorations are hidden, move it to the bottom of the page while keeping the same simple text treatment: no extra background, border, card, or shadow.
+
+Keep this small link readable with an explicit screen-friendly sans-serif stack such as `system-ui, "Segoe UI", Arial, sans-serif`. Use a fixed integer font size and avoid calculated or fractional font sizes for this element.
+
 Reference examples:
 - Vertical text along the page edge.
 - Asterisk or star-like symbols.

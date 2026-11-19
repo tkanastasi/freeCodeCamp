@@ -20,22 +20,34 @@
         line-height: 1.5;
       }
 
-      body::before,
       body::after {
         position: fixed;
         z-index: 0;
         pointer-events: none;
       }
 
-      body::before {
-        content: "EXPLORE MORE • TAKE THE LONG WAY";
+      .github-source-link {
+        position: fixed;
+        z-index: 2;
         top: 35%;
         left: 24px;
         writing-mode: vertical-rl;
-        font-size: 11px;
-        font-weight: bold;
-        letter-spacing: 3px;
+        font-family: system-ui, "Segoe UI", Arial, sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: 1px;
         color: #b96347;
+        text-decoration: none;
+      }
+
+      .github-source-link:hover {
+        color: #24231f;
+      }
+
+      .github-source-link:focus-visible {
+        outline: 3px solid #b96347;
+        outline-offset: 4px;
       }
 
       body::after {
@@ -84,7 +96,7 @@
         border-radius: 4px;
         color: #fffaf2;
         font-size: 11px;
-        font-weight: bold;
+        font-weight: 600;
         letter-spacing: 2px;
       }
 
@@ -107,6 +119,16 @@
         margin: 0;
         color: #d9d5ca;
         font-size: 17px;
+      }
+
+      .brief-label {
+        position: relative;
+        z-index: 1;
+        margin: 0 0 6px;
+        color: #a3ad7d;
+        font-size: 11px;
+        font-weight: bold;
+        letter-spacing: 2px;
       }
 
       main {
@@ -398,8 +420,12 @@
       }
 
       @media (max-width: 1200px) {
-        body::before {
-          display: none;
+        .github-source-link {
+          position: static;
+          display: block;
+          width: fit-content;
+          margin: 34px auto 4px;
+          writing-mode: horizontal-tb;
         }
       }
 
@@ -514,13 +540,15 @@
 
   <body>
     <header>
-      <p class="eyebrow">FIELD NOTES / 01 — HIKING EDITION</p>
+      <p class="eyebrow">PROJECTS / 01 — BUILD A SURVEY FORM</p>
 
       <h1 id="title">Hiking Experience Survey</h1>
 
+      <p class="brief-label">PROJECT BRIEF</p>
       <p id="description">
-        Thank you for joining our hiking trip! Please share your experience
-        to help us improve future adventures.
+        Build an accessible survey form using semantic HTML, labeled inputs,
+        native validation, a dropdown, radio buttons, checkboxes, and a
+        comments field.
       </p>
     </header>
 
@@ -741,5 +769,14 @@
         <button id="submit" type="submit">Submit</button>
       </form>
     </main>
+
+    <a
+      class="github-source-link"
+      href="https://github.com/tkanastasi/freeCodeCamp/tree/master/Responsive%20Web%20Design%20Certification/Projects/Build%20a%20Survey%20Form"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      VIEW SOURCE ON GITHUB · @tkanastasi
+    </a>
   </body>
 </html>

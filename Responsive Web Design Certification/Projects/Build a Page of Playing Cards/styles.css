@@ -12,19 +12,28 @@ body {
   overflow-x: hidden;
 }
 
-body::before {
-  content: "PLAY YOUR HAND • ENJOY THE GAME";
+.github-source-link {
   position: fixed;
+  z-index: 2;
   left: 24px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 35%;
   writing-mode: vertical-rl;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 3px;
+  font-family: system-ui, "Segoe UI", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 1px;
   color: #b96347;
-  opacity: 0.7;
-  z-index: -1;
+  text-decoration: none;
+}
+
+.github-source-link:hover {
+  color: #24231f;
+}
+
+.github-source-link:focus-visible {
+  outline: 3px solid #b96347;
+  outline-offset: 4px;
 }
 
 body::after {
@@ -72,7 +81,17 @@ header::after {
   color: #fffefa;
   border-radius: 4px;
   font-size: 11px;
-  font-weight: bold;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.brief-label {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 6px;
+  color: #a3ad7d;
+  font-size: 11px;
+  font-weight: 600;
   letter-spacing: 2px;
 }
 
@@ -224,6 +243,7 @@ header h1 {
 .middle {
   display: flex;
   flex-direction: column;
+  align-items: center;
   align-self: center;
   font-size: 42px;
   line-height: 1.3;
@@ -269,8 +289,12 @@ header h1 {
 }
 
 @media (max-width: 1200px) {
-  body::before {
-    display: none;
+  .github-source-link {
+    position: static;
+    display: block;
+    width: fit-content;
+    margin: 34px auto 4px;
+    writing-mode: horizontal-tb;
   }
 
   header,
