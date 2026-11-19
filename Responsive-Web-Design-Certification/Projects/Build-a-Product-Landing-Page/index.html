@@ -10,29 +10,40 @@
 
 <body>
   <header id="header">
-    
-  <a href="#home" class="logo">
-    <img
-      id="header-img"
-      class="logo-icon"
-      src="https://img.icons8.com/ios-filled/100/344c3b/bird.png"
-      alt="Fieldnote bird logo"
-    >
-    <span>FIELD<span class="logo-accent">NOTE.</span></span>
-  </a>
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <img
+          id="header-img"
+          class="logo-icon"
+          src="https://img.icons8.com/ios-filled/100/a3ad7d/bird.png"
+          alt=""
+          hidden
+        >
+        <span>FIELD<span class="logo-accent">NOTE.</span></span>
+      </a>
 
-    <nav id="nav-bar">
-      <a class="nav-link" href="#features">Discover</a>
-      <a class="nav-link" href="#field-notes">Field notes</a>
-      <a class="nav-link" href="#join">Join us</a>
-    </nav>
+      <nav id="nav-bar">
+        <a class="nav-link" href="#features">Discover</a>
+        <a class="nav-link" href="#field-notes">Field notes</a>
+        <a class="nav-link" href="#join">Join us</a>
+      </nav>
+    </div>
   </header>
 
   <main>
+    <section class="project-header" aria-labelledby="title">
+      <p class="eyebrow">PROJECTS / 05 — BUILD A PRODUCT LANDING PAGE</p>
+      <h1 id="title">Find your wild.</h1>
+      <p class="brief-label">PROJECT BRIEF</p>
+      <p class="project-brief">
+        Create a responsive product page with section navigation, an embedded video,
+        and an accessible email signup form.
+      </p>
+    </section>
+
     <section class="hero" id="home">
       <div class="hero-content">
-        <p class="eyebrow">A LITTLE CLOSER TO NATURE</p>
-        <h1>Find your<br><em>wild.</em></h1>
+        <h2>Birds are closer<br>than you think.</h2>
         <p class="intro">
           Slow down, look up, and discover the wonderful
           world of birds living right around you.
@@ -42,15 +53,13 @@
 
       <div class="hero-image">
         <img
-          src="https://images.unsplash.com/photo-1444464666168-49d633b86797?w=1000"
-          alt="A colorful bird perched on a branch"
+          src="./kingfisher.svg"
+          alt="A stylized kingfisher perched on a branch"
         >
-        <span>01 / LOOK CLOSER</span>
       </div>
     </section>
 
     <section id="features" class="features">
-      <p class="eyebrow">WHY BIRDWATCH?</p>
       <h2>There is more outside<br>your window.</h2>
 
       <div class="feature-grid">
@@ -76,7 +85,6 @@
 
     <section id="field-notes" class="field-notes">
       <div>
-        <p class="eyebrow">YOUR FIRST FIELD NOTE</p>
         <h2>Every bird has<br>a story.</h2>
         <p>
           Grab a pair of binoculars, find a quiet spot,
@@ -96,7 +104,6 @@
     </section>
 
     <section id="join" class="join">
-      <p class="eyebrow">A NOTE FROM THE WILD</p>
       <h2>Stay curious.</h2>
       <p>Get occasional field notes, birdwatching tips and inspiration.</p>
 
@@ -111,11 +118,20 @@
         <input id="submit" type="submit" value="Count me in ↗">
       </form>
     </section>
+
+    <footer>
+      <p>© 2026 FIELDNOTE</p>
+      <p>MADE FOR THE LOVE OF BIRDS.</p>
+    </footer>
   </main>
 
-  <footer>
-    <p>© 2026 FIELDNOTE</p>
-    <p>MADE FOR THE LOVE OF BIRDS.</p>
-  </footer>
+  <a
+    class="github-source-link"
+    href="https://github.com/tkanastasi/freeCodeCamp/tree/master/Responsive-Web-Design-Certification/Projects/Build-a-Product-Landing-Page"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    VIEW SOURCE ON GITHUB · @tkanastasi
+  </a>
 </body>
 </html>

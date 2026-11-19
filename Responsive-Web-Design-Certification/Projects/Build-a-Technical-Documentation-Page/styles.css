@@ -113,7 +113,7 @@ body {
   display: block;
   padding: 10px 20px;
   color: var(--color-ink);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.35;
   text-decoration: none;
   transition: background-color 0.18s ease, border-color 0.18s ease;
@@ -371,6 +371,7 @@ kbd {
 
   .nav-link {
     padding: 9px 22px;
+    font-size: 14px;
   }
 
   #main-doc {

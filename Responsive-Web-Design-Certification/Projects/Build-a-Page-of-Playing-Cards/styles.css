@@ -355,6 +355,16 @@ header h1 {
     font-size: 55px;
   }
 
+  .eyebrow {
+    position: relative;
+    z-index: 1;
+    max-width: calc(100% - 58px);
+    padding: 6px 9px;
+    font-size: 10px;
+    letter-spacing: 1.4px;
+    line-height: 1.5;
+  }
+
   .description {
     font-size: 15px;
   }

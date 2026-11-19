@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Kingfisher</title>
+  <desc id="desc">A streamlined kingfisher perched on a branch, drawn in matcha, terracotta, cream, and ink.</desc>
+  <g stroke="#24231f" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Branch and feet -->
+    <path d="M96 376h448M232 376l-20 42m202-42 17 42" fill="none" stroke-width="8"/>
+    <path d="M330 356v20m28-25v25" fill="none" stroke-width="7"/>
+
+    <!-- Tail, body, and folded wing -->
+    <path d="M210 314 112 352l126-2" fill="#a3ad7d" stroke-width="7"/>
+    <path d="M197 292c15-64 73-112 145-113 76-1 137 50 143 119 6 66-39 111-111 111H285c-65 0-105-48-88-117Z" fill="#a3ad7d" stroke-width="8"/>
+    <path d="M289 221c33-21 77-20 109 1 39 26 49 75 24 115-18 29-50 48-94 56 17-50 7-108-39-172Z" fill="#b96347" stroke-width="7"/>
+    <path d="M207 296c34-39 83-53 130-39-26 12-48 32-63 59 24-14 48-19 72-14-31 17-54 42-72 74-27-20-49-47-67-80Z" fill="#fffefa" stroke-width="7"/>
+
+    <!-- Head and long bill -->
+    <path d="M321 190c-8-53 19-98 66-117 43-18 95-6 120 30 18 26 18 59 3 85-47-20-112-19-189 2Z" fill="#a3ad7d" stroke-width="8"/>
+    <path d="M364 116c25-31 63-45 99-36-28 14-48 36-59 63Z" fill="#b96347" stroke-width="6"/>
+    <path d="m494 169 113 17-116 24c10-13 11-27 3-41Z" fill="#b96347" stroke-width="8"/>
+    <path d="M375 181c17-20 44-25 66-13-18 5-30 17-37 32-12-3-22-9-29-19Z" fill="#fffefa" stroke="none"/>
+    <circle cx="415" cy="174" r="7" fill="#24231f" stroke="none"/>
+  </g>
+</svg>
