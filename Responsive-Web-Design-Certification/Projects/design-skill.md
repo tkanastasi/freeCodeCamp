@@ -142,6 +142,8 @@ Set each browser tab's `<title>` to `freeCodeCamp / Project NN`, using the proje
 
 Use one shared favicon for all projects. Keep the SVG at the `Projects` directory root and link to it from each project page with `../favicon.svg`. Use a clean, centered eight-ray asterisk in Matcha (`#a3ad7d`) on an Ink (`#24231f`) rounded square with a small Matcha offset shadow.
 
+Use hyphens instead of spaces in the certification and project directory names while preserving their title-case words, for example `Responsive-Web-Design-Certification/Projects/Build-a-Survey-Form`. Keep the `Projects` directory name unchanged.
+
 ### Primary body font
 
 **Arial, sans-serif**
