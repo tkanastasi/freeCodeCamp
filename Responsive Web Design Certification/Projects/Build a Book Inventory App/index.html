@@ -3,19 +3,28 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Inventory</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Arapey:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+  <div class="inventory-shell">
+  <header>
+    <p class="eyebrow">PROJECTS / 03 — BUILD A BOOK INVENTORY APP</p>
     <h1>Book Inventory</h1>
+    <p class="brief-label">PROJECT BRIEF</p>
+    <p class="description">
+      Build a book inventory with a semantic table, reading statuses, and ratings.
+      Use CSS attribute selectors and gradients to distinguish reading progress
+      and personal ratings.
+    </p>
+  </header>
 
-    <table>
+  <main class="inventory-panel">
+    <div class="table-scroll" role="region" aria-label="Book inventory table" tabindex="0">
+      <table>
+        <caption class="visually-hidden">A personal inventory of books and reading progress</caption>
       <thead>
         <tr>
           <th>Title</th>
@@ -105,7 +114,19 @@
           </td>
         </tr>
       </tbody>
-    </table>
+      </table>
+    </div>
+  </main>
+  </div>
+
+  <a
+    class="github-source-link"
+    href="https://github.com/tkanastasi/freeCodeCamp/tree/master/Responsive%20Web%20Design%20Certification/Projects/Build%20a%20Book%20Inventory%20App"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    VIEW SOURCE ON GITHUB · @tkanastasi
+  </a>
 </body>
 
 </html>

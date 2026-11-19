@@ -318,6 +318,8 @@ Add a real, keyboard-accessible link to the current project folder in the user's
 
 Keep this small link readable with an explicit screen-friendly sans-serif stack such as `system-ui, "Segoe UI", Arial, sans-serif`. Use a fixed integer font size and avoid calculated or fractional font sizes for this element.
 
+Style scrollbars consistently across projects: use an Ink (`#24231f`) thumb and a Paper (`#f7f4ec`) track. Keep the thumb Ink on hover as well; use the appropriate standard and WebKit scrollbar properties where supported.
+
 Reference examples:
 - Vertical text along the page edge.
 - Asterisk or star-like symbols.
