@@ -2,15 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>freeCodeCamp / Project 04</title>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="stylesheet" href="styles.css">
   </head>
 
   <body>
-    <nav id="navbar">
-      <header>JS Documentation</header>
-      <ul>
+    <a class="skip-link" href="#main-doc">Skip to documentation</a>
+
+    <nav id="navbar" aria-label="Documentation sections">
+      <header>Outline</header>
+      <ul class="nav-list">
         <li>
           <a class="nav-link" href="#Introduction">Introduction</a>
         </li>
@@ -43,9 +46,20 @@
           <a class="nav-link" href="#Function_declarations">Function declarations</a>
         </li>
         <li><a class="nav-link" href="#Reference">Reference</a></li>
+      </ul>
     </nav>
 
     <main id="main-doc">
+      <header class="page-header">
+        <p class="eyebrow">PROJECTS / 04 — BUILD A TECHNICAL DOCUMENTATION PAGE</p>
+        <h1>JavaScript Documentation</h1>
+        <p class="brief-label">PROJECT BRIEF</p>
+        <p class="description">
+          Create a JavaScript reference with semantic topic sections, linked navigation,
+          code examples, and a responsive sidebar that stays visible on desktop.
+        </p>
+      </header>
+
       <section class="main-section" id="Introduction">
         <header>Introduction</header>
         <article>
@@ -392,5 +406,14 @@
         </article>
       </section>
     </main>
+
+    <a
+      class="github-source-link"
+      href="https://github.com/tkanastasi/freeCodeCamp/tree/master/Responsive-Web-Design-Certification/Projects/Build-a-Technical-Documentation-Page"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      VIEW SOURCE ON GITHUB · @tkanastasi
+    </a>
   </body>
 </html>
