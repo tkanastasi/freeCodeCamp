@@ -10,6 +10,29 @@
         box-sizing: border-box;
       }
 
+      html {
+        scrollbar-color: #24231f #f7f4ec;
+        scrollbar-width: auto;
+      }
+
+      html::-webkit-scrollbar {
+        width: 16px;
+      }
+
+      html::-webkit-scrollbar-track {
+        background: #f7f4ec;
+      }
+
+      html::-webkit-scrollbar-thumb {
+        background: #24231f;
+        border: 2px solid #f7f4ec;
+        border-radius: 4px;
+      }
+
+      html::-webkit-scrollbar-thumb:hover {
+        background: #24231f;
+      }
+
       body {
         position: relative;
         margin: 0;
@@ -148,11 +171,37 @@
         display: none;
       }
 
+      .form-intro {
+        margin: 0 0 28px;
+        color: #24231f;
+        font-family: Georgia, serif;
+        font-size: 23px;
+        font-weight: 600;
+        line-height: 1.35;
+      }
+
       #survey-form > label {
         display: block;
         margin-bottom: 8px;
         font-size: 17px;
         font-weight: bold;
+      }
+
+      .field-note {
+        display: inline-block;
+        margin-left: 8px;
+        padding: 4px 8px;
+        background: #f7f4ec;
+        border: 0;
+        border-radius: 4px;
+        color: #62605a;
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        vertical-align: middle;
       }
 
       input[type="text"],
@@ -221,8 +270,8 @@
         border: 1.5px solid #24231f;
         border-radius: 9px;
         font-family: Georgia, serif;
-        font-size: 20px;
-        font-weight: bold;
+        font-size: 18px;
+        font-weight: 600;
         line-height: 1.35;
       }
 
@@ -233,11 +282,11 @@
       .choice-card {
         position: relative;
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
         min-width: 0;
-        min-height: 85px;
+        min-height: 65px;
         padding: 14px;
         background: #fffefa;
         border: 1.5px solid #24231f;
@@ -256,20 +305,21 @@
 
       .choice-card input {
         position: absolute;
-        top: 14px;
+        top: 50%;
         left: 14px;
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
         margin: 0;
         opacity: 0;
         cursor: pointer;
+        transform: translateY(-50%);
       }
 
       .choice-card::before {
         content: "";
         display: block;
-        width: 30px;
-        height: 30px;
+        width: 22px;
+        height: 22px;
         flex-shrink: 0;
         background: #f7f4ec;
         border: 1.5px solid #24231f;
@@ -279,19 +329,20 @@
       .choice-card::after {
         content: "✓";
         position: absolute;
-        top: 14px;
+        top: 50%;
         left: 14px;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 30px;
-        height: 30px;
+        width: 22px;
+        height: 22px;
         color: #fffefa;
-        font-size: 20px;
+        font-size: 16px;
         font-weight: bold;
         line-height: 1;
         opacity: 0;
         pointer-events: none;
+        transform: translateY(-50%);
       }
 
       .choice-card:not(.radio-card):hover,
@@ -338,13 +389,24 @@
       .radio-card::before {
         width: 22px;
         height: 22px;
-        background: #f7f4ec;
+        background: #fffefa;
         border: 1.5px solid #24231f;
         border-radius: 50%;
       }
 
-      .radio-card::after {
-        content: none;
+      .choice-card.radio-card::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 26.5px;
+        width: 8px;
+        height: 8px;
+        background: #fffefa;
+        border-radius: 50%;
+        opacity: 0;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        z-index: 1;
       }
 
       .radio-card:hover,
@@ -365,14 +427,20 @@
         border-color: #24231f;
       }
 
+      .choice-card.radio-card:has(input:checked)::after {
+        opacity: 1;
+      }
+
       .choice-card:has(input:focus-visible) {
         outline: 3px solid #b96347;
         outline-offset: 3px;
       }
 
       #submit {
-        width: 100%;
-        padding: 16px 20px;
+        width: 50%;
+        margin: 0 auto;
+        display: block;
+        padding: 16px 28px;
         background: #a3ad7d;
         border: 2px solid #24231f;
         border-radius: 10px;
@@ -455,6 +523,10 @@
           font-size: 16px;
         }
 
+        .form-intro {
+          font-size: 21px;
+        }
+
         #survey-form {
           padding: 24px 18px;
           box-shadow: 6px 6px 0 #a3ad7d;
@@ -469,35 +541,37 @@
         fieldset legend {
           margin-left: 4px;
           padding: 8px 12px;
-          font-size: 19px;
+          font-size: 17px;
         }
 
         .choice-card {
-          min-height: 85px;
+          min-height: 65px;
           padding: 14px;
-          gap: 10px;
+          gap: 12px;
           font-size: 16px;
         }
 
         .choice-card input {
-          top: 14px;
+          top: 50%;
           left: 14px;
+          transform: translateY(-50%);
         }
 
         .choice-card::before {
-          width: 30px;
-          height: 30px;
+          width: 22px;
+          height: 22px;
         }
 
         .choice-card::after {
-          top: 14px;
+          top: 50%;
           left: 14px;
-          width: 30px;
-          height: 30px;
+          width: 22px;
+          height: 22px;
+          transform: translateY(-50%);
         }
 
         .radio-card {
-          min-height: 85px;
+          min-height: 65px;
           padding: 14px;
           gap: 12px;
         }
@@ -511,6 +585,10 @@
           width: 22px;
           height: 22px;
         }
+
+        .improvement-options {
+          grid-template-columns: 1fr;
+        }
       }
 
       @media (max-width: 400px) {
@@ -519,7 +597,7 @@
         }
 
         .choice-card {
-          min-height: 85px;
+          min-height: 65px;
         }
 
         #title {
@@ -554,6 +632,10 @@
 
     <main>
       <form id="survey-form">
+        <p class="form-intro">
+          Thank you for joining our hiking trip! Please share your experience to help us improve future adventures.
+        </p>
+
         <label id="name-label" for="name">Name</label>
         <input
           type="text"
@@ -576,7 +658,9 @@
 
         <br /><br />
 
-        <label id="number-label" for="number">Age (optional)</label>
+        <label id="number-label" for="number">
+          Age <span class="field-note optional-note">Optional</span>
+        </label>
         <input
           type="number"
           id="number"
@@ -645,9 +729,10 @@
 
         <br /><br />
 
-        <fieldset>
+        <fieldset class="improvement-options">
           <legend>
-            What would you like to see improved? (Check all that apply)
+            What would you like to see improved?
+            <span class="field-note">Check all that apply</span>
           </legend>
 
           <label class="choice-card">

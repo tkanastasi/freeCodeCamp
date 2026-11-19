@@ -2,6 +2,30 @@
   box-sizing: border-box;
 }
 
+html {
+  scrollbar-color: #24231f #f7f4ec;
+  scrollbar-width: auto;
+}
+
+html::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #f7f4ec;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #24231f;
+  border: 2px solid #f7f4ec;
+  border-radius: 4px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #24231f;
+}
+
 body {
   margin: 0;
   padding: 40px 20px;
@@ -99,6 +123,7 @@ header h1 {
   margin: 0 0 20px;
   font-family: Georgia, serif;
   font-size: clamp(38px, 6vw, 68px);
+  font-weight: normal;
   line-height: 1.05;
 }
 

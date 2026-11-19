@@ -21,6 +21,29 @@
   box-sizing: border-box;
 }
 
+html {
+  scrollbar-color: var(--color-ink) var(--color-paper);
+  scrollbar-width: auto;
+}
+
+html::-webkit-scrollbar {
+  width: 16px;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--color-paper);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--color-ink);
+  border: 2px solid var(--color-paper);
+  border-radius: 4px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ink);
+}
+
 body {
   position: relative;
   min-height: 100vh;
@@ -171,11 +194,11 @@ h1 {
   border: 3px solid var(--color-ink);
   border-radius: 12px;
   scrollbar-color: var(--color-ink) var(--color-paper);
-  scrollbar-width: thin;
+  scrollbar-width: auto;
 }
 
 .table-scroll::-webkit-scrollbar {
-  height: 12px;
+  height: 16px;
 }
 
 .table-scroll::-webkit-scrollbar-track {
@@ -185,7 +208,7 @@ h1 {
 
 .table-scroll::-webkit-scrollbar-thumb {
   background: var(--color-ink);
-  border: 2px solid var(--color-ink);
+  border: 2px solid var(--color-paper);
   border-radius: 4px;
 }
 

@@ -136,7 +136,9 @@ h1 {
 }
 ```
 
-Do not automatically make all headings bold. Prefer regular Georgia for large titles unless the visual hierarchy requires otherwise.
+Do not automatically make all headings bold. Prefer regular Georgia for large titles unless the visual hierarchy requires otherwise. Set `font-weight: normal` explicitly on each main page title so browser defaults do not make one project's title heavier than the others.
+
+Set the browser tab's `<title>` to the same text as the page's `<h1>`.
 
 ### Primary body font
 
@@ -318,7 +320,7 @@ Add a real, keyboard-accessible link to the current project folder in the user's
 
 Keep this small link readable with an explicit screen-friendly sans-serif stack such as `system-ui, "Segoe UI", Arial, sans-serif`. Use a fixed integer font size and avoid calculated or fractional font sizes for this element.
 
-Style scrollbars consistently across projects: use an Ink (`#24231f`) thumb and a Paper (`#f7f4ec`) track. Keep the thumb Ink on hover as well; use the appropriate standard and WebKit scrollbar properties where supported.
+Style scrollbars consistently across projects: use an Ink (`#24231f`) thumb and a Paper (`#f7f4ec`) track. Keep the thumb Ink on hover as well. Use `scrollbar-width: auto` and 16px WebKit scrollbar width and height so vertical and horizontal scrollbars have consistent thickness; use the appropriate standard and WebKit scrollbar properties where supported.
 
 Reference examples:
 - Vertical text along the page edge.
