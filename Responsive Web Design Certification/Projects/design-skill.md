@@ -138,7 +138,9 @@ h1 {
 
 Do not automatically make all headings bold. Prefer regular Georgia for large titles unless the visual hierarchy requires otherwise. Set `font-weight: normal` explicitly on each main page title so browser defaults do not make one project's title heavier than the others.
 
-Set the browser tab's `<title>` to the same text as the page's `<h1>`.
+Set each browser tab's `<title>` to `freeCodeCamp / Project NN`, using the project's two-digit number (for example, `freeCodeCamp / Project 01`).
+
+Use one shared favicon for all projects. Keep the SVG at the `Projects` directory root and link to it from each project page with `../favicon.svg`. Use a clean, centered eight-ray asterisk in Matcha (`#a3ad7d`) on an Ink (`#24231f`) rounded square with a small Matcha offset shadow.
 
 ### Primary body font
 
