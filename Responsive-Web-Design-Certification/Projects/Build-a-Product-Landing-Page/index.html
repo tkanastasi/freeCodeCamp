@@ -14,7 +14,6 @@
       <a href="#home" class="logo">
         <img
           id="header-img"
-          class="logo-icon"
           src="https://img.icons8.com/ios-filled/100/a3ad7d/bird.png"
           alt=""
           hidden
@@ -23,9 +22,9 @@
       </a>
 
       <nav id="nav-bar">
-        <a class="nav-link" href="#features">Discover</a>
-        <a class="nav-link" href="#field-notes">Field notes</a>
-        <a class="nav-link" href="#join">Join us</a>
+        <a class="nav-link" href="#features">How it works</a>
+        <a class="nav-link" href="#field-notes">Sound ID demo</a>
+        <a class="nav-link" href="#join">Get updates</a>
       </nav>
     </div>
   </header>
@@ -36,76 +35,127 @@
       <h1 id="title">Find your wild.</h1>
       <p class="brief-label">PROJECT BRIEF</p>
       <p class="project-brief">
-        Create a responsive product page with section navigation, an embedded video,
-        and an accessible email signup form.
+        Create a responsive landing page for a bird-call identification app, with
+        linked sections, a product demo, and an accessible email signup form.
       </p>
     </section>
 
     <section class="hero" id="home">
       <div class="hero-content">
-        <h2>Birds are closer<br>than you think.</h2>
+        <h2>Hear a call.<br>Meet the <em>singer.</em></h2>
         <p class="intro">
-          Slow down, look up, and discover the wonderful
-          world of birds living right around you.
+          Fieldnote listens to nearby birdsong and suggests likely species as you
+          record. Explore each bird’s call and field notes, then save your
+          discoveries to a personal list.
         </p>
-        <a class="button" href="#features">Start exploring ↗</a>
+        <a class="button" href="#field-notes">Hear how it works ↗</a>
       </div>
 
-      <div class="hero-image">
-        <img
-          src="./kingfisher.svg"
-          alt="A stylized kingfisher perched on a branch"
-        >
+      <div class="sound-card" role="img" aria-label="Example sound identification result for a European robin">
+        <div class="sound-card-header">
+          <span class="sound-card-label">FIELDNOTE / SOUND ID</span>
+          <span class="listening-state"><span></span> LISTENING</span>
+        </div>
+        <div class="sound-wave">
+          <div class="sound-wave-meta"><span>LIVE RECORDING</span><span>00:08</span></div>
+          <svg viewBox="0 0 320 52" aria-hidden="true">
+            <path class="wave-baseline" d="M0 26h320" />
+            <path class="waveform waveform-back" d="M0 26H24L32 16 40 37 50 5 60 48 70 10 80 36 90 20 100 29 110 25H124L132 18 140 39 150 8 160 44 170 14 180 34 190 22 200 28H214L222 19 230 38 240 11 250 41 260 16 270 33 280 22 290 28H320" />
+            <path class="waveform waveform-front" d="M0 26H24L32 20 40 33 50 10 60 42 70 15 80 33 90 22 100 28 110 25H124L132 19 140 36 150 12 160 40 170 17 180 31 190 23 200 27H214L222 20 230 35 240 14 250 38 260 18 270 31 280 23 290 27H320" />
+          </svg>
+        </div>
+        <div class="match-heading"><span>LIKELY MATCH</span><span class="match-count">01 / 03</span></div>
+        <div class="bird-match">
+          <span class="match-number">01</span>
+          <div><h3>European robin</h3><p>Song · nearby</p></div>
+          <span class="match-score">94%</span>
+        </div>
+        <div class="match-footer"><span>PLAY CALL</span><span class="play-mark">▶</span></div>
       </div>
     </section>
 
     <section id="features" class="features">
-      <h2>There is more outside<br>your window.</h2>
+      <h2>From birdsong to a bird sighting.</h2>
 
       <div class="feature-grid">
         <article>
-          <span>01</span>
-          <h3>Notice more</h3>
-          <p>Learn to recognize local birds, their calls and everyday habits.</p>
+          <div class="feature-card-top">
+            <span>01</span>
+            <span class="feature-card-label">LISTEN</span>
+          </div>
+          <h3>Listen live</h3>
+          <p>Fieldnote listens as you record and brings likely calls into view, even when the singer is hidden in the trees.</p>
+          <div class="feature-example">
+            <span>DURING RECORDING</span>
+            <strong>Live suggestions from the soundscape</strong>
+          </div>
         </article>
 
         <article>
-          <span>02</span>
-          <h3>Slow down</h3>
-          <p>Take a break from screens and enjoy a quieter way to explore.</p>
+          <div class="feature-card-top">
+            <span>02</span>
+            <span class="feature-card-label">IDENTIFY</span>
+          </div>
+          <h3>Meet the singer</h3>
+          <p>Open a likely match to explore its range, field marks, and reference calls before settling on an identification.</p>
+          <div class="feature-example">
+            <span>SPECIES GUIDE</span>
+            <strong>Range · field notes · call samples</strong>
+          </div>
         </article>
 
         <article>
-          <span>03</span>
-          <h3>Keep a record</h3>
-          <p>Collect little discoveries and build your own birdwatching journal.</p>
+          <div class="feature-card-top">
+            <span>03</span>
+            <span class="feature-card-label">REMEMBER</span>
+          </div>
+          <h3>Keep your finds</h3>
+          <p>Save a species with a note, then return to past discoveries as your own record of birds and places grows.</p>
+          <div class="feature-example">
+            <span>YOUR FIELD LIST</span>
+            <strong>Species · place · date</strong>
+          </div>
         </article>
       </div>
     </section>
 
     <section id="field-notes" class="field-notes">
-      <div>
-        <h2>Every bird has<br>a story.</h2>
+      <div class="field-notes-copy">
+        <p class="research-kicker">FIELD TEST / CORNELL LAB</p>
+        <h2>How Sound ID learns to listen.</h2>
         <p>
-          Grab a pair of binoculars, find a quiet spot,
-          and see who stops by. You don't need to go far
-          to find something fascinating.
+          In a Cornell Lab challenge, Merlin went head-to-head with two expert
+          birders on photo and bird-call identification. Sam Heinrich, a machine
+          learning engineer on the Merlin team, described how recordings are
+          annotated and used to train its sound models.
         </p>
+        <blockquote class="research-quote">
+          “We do a lot of testing … but they have their limitations.”
+        </blockquote>
+        <p class="researcher-credit">
+          <strong><a href="https://www.birds.cornell.edu/home/staff/sam-heinrich/" target="_blank" rel="noopener noreferrer">Sam Heinrich</a></strong>
+          <span>Machine Learning Engineer, Cornell Lab</span>
+        </p>
+        <a
+          class="research-link"
+          href="https://academy.allaboutbirds.org/live-event/merlin-bird-id-trivia-fall-migration-edition/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Read the Cornell Lab discussion ↗
+        </a>
       </div>
 
-      <div class="video-wrap">
-        <iframe
-          id="video"
-          src="https://www.youtube.com/embed/aqz-KE-bpKQ"
-          title="Nature video"
-          allowfullscreen
-        ></iframe>
-      </div>
+      <iframe
+        id="video"
+        src="https://www.youtube.com/embed/xmSUOLxyatY"
+        title="Merlin Bird ID sound identification demo from the Cornell Lab of Ornithology"
+      ></iframe>
     </section>
 
     <section id="join" class="join">
-      <h2>Stay curious.</h2>
-      <p>Get occasional field notes, birdwatching tips and inspiration.</p>
+      <h2>Take Fieldnote outside.</h2>
+      <p>Get launch notes and a first look at the bird-call field guide.</p>
 
       <form id="form" action="https://www.freecodecamp.org/email-submit" method="post">
         <input
@@ -115,13 +165,12 @@
           placeholder="Your email address"
           required
         >
-        <input id="submit" type="submit" value="Count me in ↗">
+        <input id="submit" type="submit" value="Keep me posted ↗">
       </form>
     </section>
 
     <footer>
       <p>© 2026 FIELDNOTE</p>
-      <p>MADE FOR THE LOVE OF BIRDS.</p>
     </footer>
   </main>
 

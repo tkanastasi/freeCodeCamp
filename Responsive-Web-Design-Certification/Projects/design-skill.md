@@ -316,6 +316,18 @@ PROJECTS / [PROJECT NUMBER] — [PROJECT FOLDER NAME]
 
 Use the project number provided by the user and the project folder name, converted to uppercase. Keep the slash and em dash as shown.
 
+Use this project number index when labeling the current projects:
+
+| Number | Project folder |
+|---|---|
+| `01` | `Build-a-Survey-Form` |
+| `02` | `Build-a-Page-of-Playing-Cards` |
+| `03` | `Build-a-Book-Inventory-App` |
+| `04` | `Build-a-Technical-Documentation-Page` |
+| `05` | `Build-a-Product-Landing-Page` |
+
+Keep the two-digit number and folder-to-number mapping consistent in page labels, browser titles, and GitHub links. Extend this index when new projects are added.
+
 Style this small uppercase label with a semibold font weight (`600`) so the letter spacing stays clear and the text does not look overly heavy.
 
 Place the label `PROJECT BRIEF` immediately above the page description. Write the description only after the user provides the project brief and tests. Summarize the learning objective and the main HTML, CSS, accessibility, or interaction techniques in a concise sentence or two, based on that project’s requirements.
