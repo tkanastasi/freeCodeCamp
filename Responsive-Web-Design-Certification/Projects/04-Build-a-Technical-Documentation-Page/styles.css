@@ -51,24 +51,6 @@ body {
   line-height: 1.6;
 }
 
-.skip-link {
-  position: fixed;
-  z-index: 10;
-  top: 12px;
-  left: 12px;
-  padding: 10px 14px;
-  transform: translateY(-160%);
-  background: var(--color-ink);
-  border: 2px solid var(--color-paper);
-  border-radius: 6px;
-  color: var(--color-paper);
-  text-decoration: none;
-}
-
-.skip-link:focus {
-  transform: translateY(0);
-}
-
 #navbar {
   position: fixed;
   z-index: 5;
