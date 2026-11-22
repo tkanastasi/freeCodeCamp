@@ -44,12 +44,6 @@
         line-height: 1.5;
       }
 
-      body::after {
-        position: fixed;
-        z-index: 0;
-        pointer-events: none;
-      }
-
       .github-source-link {
         position: fixed;
         z-index: 2;
@@ -75,6 +69,9 @@
       }
 
       body::after {
+        position: fixed;
+        z-index: 0;
+        pointer-events: none;
         content: "✳";
         right: 5%;
         bottom: 12%;
@@ -166,10 +163,6 @@
         border: 2px solid #24231f;
         border-radius: 24px;
         box-shadow: 10px 10px 0 #b96347;
-      }
-
-      #survey-form > br {
-        display: none;
       }
 
       .form-intro {
@@ -276,10 +269,6 @@
         line-height: 1.35;
       }
 
-      fieldset br {
-        display: none;
-      }
-
       .choice-card {
         position: relative;
         display: flex;
@@ -296,12 +285,11 @@
         font-size: 17px;
         line-height: 1.4;
         cursor: pointer;
-        box-shadow: none;
         transition:
-          background-color 0.2s,
-          border-color 0.2s,
-          box-shadow 0.2s,
-          transform 0.2s;
+        background-color 0.2s,
+        border-color 0.2s,
+        box-shadow 0.2s,
+        transform 0.2s;
       }
 
       .choice-card input {
@@ -316,7 +304,7 @@
         transform: translateY(-50%);
       }
 
-      .choice-card::before {
+      .checkbox-card::before {
         content: "";
         display: block;
         width: 22px;
@@ -327,7 +315,7 @@
         border-radius: 7px;
       }
 
-      .choice-card::after {
+      .checkbox-card::after {
         content: "✓";
         position: absolute;
         top: 50%;
@@ -346,68 +334,46 @@
         transform: translateY(-50%);
       }
 
-      .choice-card:not(.radio-card):hover,
-      .choice-card:not(.radio-card):has(input:checked) {
+      .checkbox-card:hover,
+      .checkbox-card:has(input:checked) {
         background: #a3ad7d;
         box-shadow: 5px 5px 0 #24231f;
         transform: translate(-2px, -2px);
       }
 
-      .choice-card:not(.radio-card):active {
+      .checkbox-card:active {
         transform: translate(0, 0);
         box-shadow: 2px 2px 0 #24231f;
       }
 
-      .choice-card:not(.radio-card):has(input:checked)::before {
+      .checkbox-card:has(input:checked)::before {
         background: #24231f;
         border-color: #24231f;
       }
 
-      .choice-card:not(.radio-card):has(input:checked)::after {
+      .checkbox-card:has(input:checked)::after {
         opacity: 1;
       }
 
-      .radio-card {
-        flex-direction: row;
-        align-items: center;
-        gap: 12px;
-        min-height: 65px;
-        padding: 14px;
-        background: #fffefa;
-        border: 1.5px solid #24231f;
-        border-radius: 12px;
-        font-size: 17px;
-      }
-
-      .radio-card input {
-        top: 50%;
-        left: 14px;
+      .radio-indicator {
+        display: grid;
         width: 22px;
         height: 22px;
-        transform: translateY(-50%);
-      }
-
-      .radio-card::before {
-        width: 22px;
-        height: 22px;
+        flex: 0 0 22px;
+        place-items: center;
         background: #fffefa;
         border: 1.5px solid #24231f;
         border-radius: 50%;
       }
 
-      .choice-card.radio-card::after {
+      .radio-indicator::after {
         content: "";
-        position: absolute;
-        top: 50%;
-        left: 26.5px;
         width: 8px;
         height: 8px;
         background: #fffefa;
         border-radius: 50%;
         opacity: 0;
         pointer-events: none;
-        transform: translate(-50%, -50%);
-        z-index: 1;
       }
 
       .radio-card:hover,
@@ -423,12 +389,12 @@
         box-shadow: 2px 2px 0 #24231f;
       }
 
-      .radio-card:has(input:checked)::before {
+      .radio-card:has(input:checked) .radio-indicator {
         background: #24231f;
         border-color: #24231f;
       }
 
-      .choice-card.radio-card:has(input:checked)::after {
+      .radio-card:has(input:checked) .radio-indicator::after {
         opacity: 1;
       }
 
@@ -450,10 +416,10 @@
         font-weight: bold;
         cursor: pointer;
         transition:
-          background-color 0.2s,
-          color 0.2s,
-          box-shadow 0.2s,
-          transform 0.2s;
+        background-color 0.2s,
+        color 0.2s,
+        box-shadow 0.2s,
+        transform 0.2s;
       }
 
       #submit:hover {
@@ -562,41 +528,6 @@
           font-size: 16px;
         }
 
-        .choice-card input {
-          top: 50%;
-          left: 14px;
-          transform: translateY(-50%);
-        }
-
-        .choice-card::before {
-          width: 22px;
-          height: 22px;
-        }
-
-        .choice-card::after {
-          top: 50%;
-          left: 14px;
-          width: 22px;
-          height: 22px;
-          transform: translateY(-50%);
-        }
-
-        .radio-card {
-          min-height: 65px;
-          padding: 14px;
-          gap: 12px;
-        }
-
-        .radio-card input {
-          top: 50%;
-          left: 14px;
-        }
-
-        .radio-card::before {
-          width: 22px;
-          height: 22px;
-        }
-
         .improvement-options {
           grid-template-columns: 1fr;
         }
@@ -605,10 +536,6 @@
       @media (max-width: 400px) {
         fieldset {
           grid-template-columns: 1fr;
-        }
-
-        .choice-card {
-          min-height: 65px;
         }
 
         #title {
@@ -644,7 +571,8 @@
     <main>
       <form id="survey-form">
         <p class="form-intro">
-          Thank you for joining our hiking trip! Please share your experience to help us improve future adventures.
+          Thank you for joining our hiking trip! Please share your
+          experience to help us improve future adventures.
         </p>
 
         <label id="name-label" for="name">Name</label>
@@ -656,8 +584,6 @@
           required
         />
 
-        <br /><br />
-
         <label id="email-label" for="email">Email</label>
         <input
           type="email"
@@ -666,8 +592,6 @@
           placeholder="Enter your email"
           required
         />
-
-        <br /><br />
 
         <label id="number-label" for="number">
           Age <span class="field-note optional-note">Optional</span>
@@ -680,8 +604,6 @@
           min="18"
           max="99"
         />
-
-        <br /><br />
 
         <label for="dropdown">Select your hiking level:</label>
 
@@ -701,8 +623,6 @@
           </option>
         </select>
 
-        <br /><br />
-
         <fieldset>
           <legend>Would you join another hiking trip with us?</legend>
 
@@ -714,6 +634,7 @@
               value="definitely"
               required
             />
+            <span class="radio-indicator" aria-hidden="true"></span>
             <span>Definitely</span>
           </label>
 
@@ -724,6 +645,7 @@
               name="hike-with-us"
               value="maybe"
             />
+            <span class="radio-indicator" aria-hidden="true"></span>
             <span>Maybe</span>
           </label>
 
@@ -734,11 +656,10 @@
               name="hike-with-us"
               value="n-sure"
             />
+            <span class="radio-indicator" aria-hidden="true"></span>
             <span>Not sure</span>
           </label>
         </fieldset>
-
-        <br /><br />
 
         <fieldset class="improvement-options">
           <legend>
@@ -746,7 +667,7 @@
             <span class="field-note">Check all that apply</span>
           </legend>
 
-          <label class="choice-card">
+          <label class="choice-card checkbox-card">
             <input
               type="checkbox"
               id="trails"
@@ -756,7 +677,7 @@
             <span>Trails</span>
           </label>
 
-          <label class="choice-card">
+          <label class="choice-card checkbox-card">
             <input
               type="checkbox"
               id="organization"
@@ -766,7 +687,7 @@
             <span>Organization</span>
           </label>
 
-          <label class="choice-card">
+          <label class="choice-card checkbox-card">
             <input
               type="checkbox"
               id="guides"
@@ -776,7 +697,7 @@
             <span>Guides</span>
           </label>
 
-          <label class="choice-card">
+          <label class="choice-card checkbox-card">
             <input
               type="checkbox"
               id="food"
@@ -786,7 +707,7 @@
             <span>Food</span>
           </label>
 
-          <label class="choice-card">
+          <label class="choice-card checkbox-card">
             <input
               type="checkbox"
               id="transportation"
@@ -796,7 +717,7 @@
             <span>Transportation</span>
           </label>
 
-          <label class="choice-card">
+          <label class="choice-card checkbox-card">
             <input
               type="checkbox"
               id="difficulty"
@@ -806,7 +727,7 @@
             <span>Difficulty level</span>
           </label>
 
-          <label class="choice-card">
+          <label class="choice-card checkbox-card">
             <input
               type="checkbox"
               id="break-time"
@@ -816,7 +737,7 @@
             <span>Break time</span>
           </label>
 
-          <label class="choice-card">
+          <label class="choice-card checkbox-card">
             <input
               type="checkbox"
               id="equipment"
@@ -826,7 +747,7 @@
             <span>Equipment</span>
           </label>
 
-          <label class="choice-card">
+          <label class="choice-card checkbox-card">
             <input
               type="checkbox"
               id="communication"
@@ -836,7 +757,7 @@
             <span>Communication</span>
           </label>
 
-          <label class="choice-card">
+          <label class="choice-card checkbox-card">
             <input
               type="checkbox"
               id="other"
@@ -847,10 +768,7 @@
           </label>
         </fieldset>
 
-        <br /><br />
-
         <label for="comments">Any comments?</label>
-        <br />
 
         <textarea
           id="comments"
@@ -859,8 +777,6 @@
           cols="30"
           placeholder="Share your thoughts and suggestions..."
         ></textarea>
-
-        <br /><br />
 
         <button id="submit" type="submit">Submit</button>
       </form>
