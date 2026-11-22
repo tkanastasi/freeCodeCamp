@@ -142,7 +142,7 @@ Set each browser tab's `<title>` to `freeCodeCamp / Project NN`, using the proje
 
 Use one shared favicon for all projects. Keep the SVG at the `Projects` directory root and link to it from each project page with `../favicon.svg`. Use a clean, centered eight-ray asterisk in Matcha (`#a3ad7d`) on an Ink (`#24231f`) rounded square with a small Matcha offset shadow.
 
-Use hyphens instead of spaces in the certification and project directory names while preserving their title-case words, for example `Responsive-Web-Design-Certification/Projects/Build-a-Survey-Form`. Keep the `Projects` directory name unchanged.
+Use hyphens instead of spaces in the certification and project directory names while preserving their title-case words, for example `Responsive-Web-Design-Certification/Projects/01-Build-a-Survey-Form`. Keep the `Projects` directory name unchanged.
 
 ### Primary body font
 
@@ -320,11 +320,11 @@ Use this project number index when labeling the current projects:
 
 | Number | Project folder |
 |---|---|
-| `01` | `Build-a-Survey-Form` |
-| `02` | `Build-a-Page-of-Playing-Cards` |
-| `03` | `Build-a-Book-Inventory-App` |
-| `04` | `Build-a-Technical-Documentation-Page` |
-| `05` | `Build-a-Product-Landing-Page` |
+| `01` | `01-Build-a-Survey-Form` |
+| `02` | `02-Build-a-Page-of-Playing-Cards` |
+| `03` | `03-Build-a-Book-Inventory-App` |
+| `04` | `04-Build-a-Technical-Documentation-Page` |
+| `05` | `05-Build-a-Product-Landing-Page` |
 
 Keep the two-digit number and folder-to-number mapping consistent in page labels, browser titles, and GitHub links. Extend this index when new projects are added.
 

@@ -65,9 +65,8 @@ body::after {
   position: fixed;
   right: 35px;
   bottom: 25px;
-  font-size: 100px;
+  font-size: 90px;
   color: #a3ad7d;
-  opacity: 0.5;
   animation: slow-rotate 25s linear infinite;
   z-index: -1;
 }
@@ -185,11 +184,6 @@ header h1 {
   color: #24231f;
 }
 
-.spades-tab:hover,
-.clubs-tab:hover {
-  background: #e5e5e2;
-}
-
 #spades:checked + .spades-tab,
 #clubs:checked + .clubs-tab {
   background: #24231f;
@@ -199,22 +193,23 @@ header h1 {
 
 .hearts-tab,
 .diamonds-tab {
-  color: #b3443f;
-}
-
-.hearts-tab:hover,
-.diamonds-tab:hover {
-  background: #f3dfd9;
+  color: #24231f;
 }
 
 #hearts:checked + .hearts-tab,
 #diamonds:checked + .diamonds-tab {
   background: #b3443f;
-  color: #fffefa;
+  color: #24231f;
   box-shadow: 4px 4px 0 #24231f;
 }
 
+#hearts:checked + .hearts-tab,
+#diamonds:checked + .diamonds-tab {
+  background: #b96347;
+}
+
 .suit-selector label:hover {
+  background: #e5e5e2;
   transform: translate(-2px, -2px);
   box-shadow: 5px 5px 0 #24231f;
 }
@@ -277,6 +272,15 @@ header h1 {
 
 .middle span {
   font-size: 42px;
+}
+
+.card.clubs .middle {
+  transform: translateY(-6px);
+}
+
+.card.clubs .left,
+.card.clubs .right {
+  white-space: nowrap;
 }
 
 .right {

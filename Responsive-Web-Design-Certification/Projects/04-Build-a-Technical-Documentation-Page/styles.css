@@ -271,7 +271,7 @@ body {
   font-size: 0.9em;
 }
 
-.main-section article > code {
+.main-section article > pre {
   display: block;
   max-width: 100%;
   margin: 16px 0;
@@ -354,6 +354,12 @@ kbd {
   }
 }
 
+@media (max-width: 1200px) {
+  .page-header .eyebrow {
+    max-width: calc(100% - 84px);
+  }
+}
+
 @media (max-width: 900px) {
   #navbar {
     position: relative;
@@ -407,7 +413,7 @@ kbd {
   }
 
   .eyebrow {
-    max-width: calc(100% - 58px);
+    max-width: calc(100% - 84px);
     margin-bottom: 18px;
     padding: 6px 9px;
     font-size: 10px;
@@ -456,7 +462,7 @@ kbd {
     font-size: 22px;
   }
 
-  .main-section article > code {
+  .main-section article > pre {
     padding: 12px;
     font-size: 0.82em;
   }
