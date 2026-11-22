@@ -317,6 +317,12 @@ header h1 {
   }
 }
 
+@media (max-width: 1440px) {
+  body::after {
+    display: none;
+  }
+}
+
 @media (max-width: 1200px) {
   .github-source-link {
     position: static;
