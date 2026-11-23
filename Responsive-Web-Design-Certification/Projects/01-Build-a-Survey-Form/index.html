@@ -13,21 +13,6 @@
 
       html {
         scrollbar-color: #24231f #f7f4ec;
-        scrollbar-width: auto;
-      }
-
-      html::-webkit-scrollbar {
-        width: 16px;
-      }
-
-      html::-webkit-scrollbar-track {
-        background: #f7f4ec;
-      }
-
-      html::-webkit-scrollbar-thumb {
-        background: #24231f;
-        border: 2px solid #f7f4ec;
-        border-radius: 4px;
       }
 
       body {
@@ -178,7 +163,7 @@
         font-weight: bold;
       }
 
-      .field-note {
+      .note {
         display: inline-block;
         margin-left: 8px;
         padding: 4px 8px;
@@ -316,30 +301,32 @@
         position: absolute;
         top: 50%;
         left: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: grid;
         width: 22px;
         height: 22px;
+        place-items: center;
         color: #fffefa;
         font-size: 16px;
         font-weight: bold;
         line-height: 1;
         opacity: 0;
-        pointer-events: none;
         transform: translateY(-50%);
+      }
+
+      .choice-card:hover,
+      .choice-card:has(input:checked) {
+        box-shadow: 5px 5px 0 #24231f;
+        transform: translate(-2px, -2px);
+      }
+
+      .choice-card:active {
+        box-shadow: 2px 2px 0 #24231f;
+        transform: translate(0, 0);
       }
 
       .checkbox-card:hover,
       .checkbox-card:has(input:checked) {
         background: #a3ad7d;
-        box-shadow: 5px 5px 0 #24231f;
-        transform: translate(-2px, -2px);
-      }
-
-      .checkbox-card:active {
-        transform: translate(0, 0);
-        box-shadow: 2px 2px 0 #24231f;
       }
 
       .checkbox-card:has(input:checked)::before {
@@ -369,20 +356,11 @@
         background: #fffefa;
         border-radius: 50%;
         opacity: 0;
-        pointer-events: none;
       }
 
       .radio-card:hover,
       .radio-card:has(input:checked) {
         background: #b96347;
-        border-color: #24231f;
-        box-shadow: 5px 5px 0 #24231f;
-        transform: translate(-2px, -2px);
-      }
-
-      .radio-card:active {
-        transform: translate(0, 0);
-        box-shadow: 2px 2px 0 #24231f;
       }
 
       .radio-card:has(input:checked) .radio-indicator {
@@ -587,7 +565,7 @@
         />
 
         <label id="number-label" for="number">
-          Age <span class="field-note optional-note">Optional</span>
+          Age <span class="note">Optional</span>
         </label>
         <input
           type="number"
@@ -657,7 +635,7 @@
         <fieldset class="improvement-options">
           <legend>
             What would you like to see improved?
-            <span class="field-note">Check all that apply</span>
+            <span class="note">Check all that apply</span>
           </legend>
 
           <label class="choice-card checkbox-card">
