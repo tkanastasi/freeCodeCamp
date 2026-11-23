@@ -30,10 +30,6 @@
         border-radius: 4px;
       }
 
-      html::-webkit-scrollbar-thumb:hover {
-        background: #24231f;
-      }
-
       body {
         position: relative;
         margin: 0;
@@ -77,6 +73,7 @@
         bottom: 12%;
         font-size: 90px;
         color: #a3ad7d;
+        opacity: 0.8;
         animation: slow-rotate 20s linear infinite;
       }
 
@@ -87,7 +84,6 @@
       }
 
       header {
-        position: relative;
         overflow: hidden;
         max-width: 900px;
         margin: 0 auto 38px;
@@ -106,6 +102,7 @@
         right: 35px;
         color: #a3ad7d;
         font-size: 90px;
+        opacity: 0.8;
         animation: floating 5s ease-in-out infinite;
       }
 
@@ -272,7 +269,6 @@
       .choice-card {
         position: relative;
         display: flex;
-        flex-direction: row;
         align-items: center;
         gap: 12px;
         min-width: 0;
@@ -286,10 +282,10 @@
         line-height: 1.4;
         cursor: pointer;
         transition:
-        background-color 0.2s,
-        border-color 0.2s,
-        box-shadow 0.2s,
-        transform 0.2s;
+          background-color 0.2s,
+          border-color 0.2s,
+          box-shadow 0.2s,
+          transform 0.2s;
       }
 
       .choice-card input {
@@ -416,10 +412,10 @@
         font-weight: bold;
         cursor: pointer;
         transition:
-        background-color 0.2s,
-        color 0.2s,
-        box-shadow 0.2s,
-        transform 0.2s;
+          background-color 0.2s,
+          color 0.2s,
+          box-shadow 0.2s,
+          transform 0.2s;
       }
 
       #submit:hover {
@@ -522,9 +518,6 @@
         }
 
         .choice-card {
-          min-height: 65px;
-          padding: 14px;
-          gap: 12px;
           font-size: 16px;
         }
 

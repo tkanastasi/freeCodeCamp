@@ -22,10 +22,6 @@ html::-webkit-scrollbar-thumb {
   border-radius: 4px;
 }
 
-html::-webkit-scrollbar-thumb:hover {
-  background: #24231f;
-}
-
 body {
   margin: 0;
   padding: 40px 20px;
@@ -67,6 +63,7 @@ body::after {
   bottom: 25px;
   font-size: 90px;
   color: #a3ad7d;
+  opacity: 0.8;
   animation: slow-rotate 25s linear infinite;
   z-index: -1;
 }
@@ -179,11 +176,6 @@ header h1 {
     transform 0.2s ease;
 }
 
-.spades-tab,
-.clubs-tab {
-  color: #24231f;
-}
-
 #spades:checked + .spades-tab,
 #clubs:checked + .clubs-tab {
   background: #24231f;
@@ -191,21 +183,11 @@ header h1 {
   box-shadow: 4px 4px 0 #b96347;
 }
 
-.hearts-tab,
-.diamonds-tab {
-  color: #24231f;
-}
-
-#hearts:checked + .hearts-tab,
-#diamonds:checked + .diamonds-tab {
-  background: #b3443f;
-  color: #24231f;
-  box-shadow: 4px 4px 0 #24231f;
-}
-
 #hearts:checked + .hearts-tab,
 #diamonds:checked + .diamonds-tab {
   background: #b96347;
+  color: #24231f;
+  box-shadow: 4px 4px 0 #24231f;
 }
 
 .suit-selector label:hover {
@@ -244,13 +226,11 @@ header h1 {
   box-shadow: 8px 8px 0 #24231f;
 }
 
-.card.spades,
-.card.clubs {
+.card.black-suit {
   color: #24231f;
 }
 
-.card.hearts,
-.card.diamonds {
+.card.red-suit {
   color: #b3443f;
 }
 
@@ -270,12 +250,14 @@ header h1 {
   gap: 4px;
 }
 
-.middle span {
-  font-size: 42px;
+.card.clubs .middle {
+  font-size: 36px;
+  transform: translateY(-6px);
 }
 
-.card.clubs .middle {
-  transform: translateY(-6px);
+.card.clubs.ten .middle {
+  font-size: 30px;
+  line-height: 1.1;
 }
 
 .card.clubs .left,
@@ -391,8 +373,15 @@ header h1 {
     font-size: 22px;
   }
 
-  .middle,
-  .middle span {
+  .middle {
     font-size: 34px;
+  }
+
+  .card.clubs .middle {
+    font-size: 30px;
+  }
+
+  .card.clubs.ten .middle {
+    font-size: 26px;
   }
 }

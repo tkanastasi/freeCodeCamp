@@ -40,10 +40,6 @@ html::-webkit-scrollbar-thumb {
   border-radius: 4px;
 }
 
-html::-webkit-scrollbar-thumb:hover {
-  background: var(--color-ink);
-}
-
 body {
   position: relative;
   min-height: 100vh;
@@ -64,6 +60,7 @@ body::after {
   bottom: 10%;
   color: var(--color-matcha);
   font-size: 90px;
+  opacity: 0.8;
   pointer-events: none;
   animation: slow-rotate 24s linear infinite;
 }
@@ -131,6 +128,7 @@ header::after {
   right: 35px;
   color: var(--color-matcha);
   font-size: 90px;
+  opacity: 0.8;
   pointer-events: none;
   animation: floating 5s ease-in-out infinite;
 }
@@ -286,14 +284,8 @@ th:last-child {
   border-radius: 0 10px 0 0;
 }
 
-tr[class="read"] {
-  background-image: linear-gradient(180deg, var(--color-off-white), #fbfaf6);
-}
-
-tr[class="to-read"] {
-  background-image: linear-gradient(180deg, var(--color-off-white), #fbfaf6);
-}
-
+tr[class="read"],
+tr[class="to-read"],
 tr[class="in-progress"] {
   background-image: linear-gradient(180deg, var(--color-off-white), #fbfaf6);
 }
@@ -331,27 +323,26 @@ span {
   display: inline-block;
 }
 
-tr[class="read"] span[class="status"] {
+tr[class="read"] span[class="status"],
+tr[class="to-read"] span[class="status"],
+tr[class="in-progress"] span[class="status"] {
   border: 1px solid transparent;
   border-radius: 999px;
-  background-color: var(--status-read-pill);
   background-image: none;
+}
+
+tr[class="read"] span[class="status"] {
+  background-color: var(--status-read-pill);
   color: var(--status-read-ink);
 }
 
 tr[class="to-read"] span[class="status"] {
-  border: 1px solid transparent;
-  border-radius: 999px;
   background-color: var(--status-to-read-pill);
-  background-image: none;
   color: var(--status-to-read-ink);
 }
 
 tr[class="in-progress"] span[class="status"] {
-  border: 1px solid transparent;
-  border-radius: 999px;
   background-color: var(--status-in-progress-pill);
-  background-image: none;
   color: var(--status-in-progress-ink);
 }
 
@@ -392,14 +383,8 @@ span[class^="rate"] > span {
   vertical-align: middle;
 }
 
-span[class~="one"] > span:first-child {
-  background-image: linear-gradient(135deg, var(--color-terracotta), #8f4937);
-}
-
-span[class~="two"] > span:nth-child(-n+2) {
-  background-image: linear-gradient(135deg, var(--color-terracotta), #8f4937);
-}
-
+span[class~="one"] > span:first-child,
+span[class~="two"] > span:nth-child(-n+2),
 span[class~="three"] span {
   background-image: linear-gradient(135deg, var(--color-terracotta), #8f4937);
 }
