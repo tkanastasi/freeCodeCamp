@@ -5,10 +5,6 @@
   --color-terracotta: #b96347;
   --color-off-white: #fffefa;
   --color-muted-text: #d9d5ca;
-  --color-placeholder: #89877e;
-  --color-pale-matcha: #edf0e3;
-  --color-light-terracotta: #e9bda7;
-  --color-card-red: #b3443f;
   --status-read-pill: #e3e9d2;
   --status-read-ink: #566233;
   --status-to-read-pill: #dce9ed;
@@ -23,21 +19,6 @@
 
 html {
   scrollbar-color: var(--color-ink) var(--color-paper);
-  scrollbar-width: auto;
-}
-
-html::-webkit-scrollbar {
-  width: 16px;
-}
-
-html::-webkit-scrollbar-track {
-  background: var(--color-paper);
-}
-
-html::-webkit-scrollbar-thumb {
-  background: var(--color-ink);
-  border: 2px solid var(--color-paper);
-  border-radius: 4px;
 }
 
 body {
@@ -192,26 +173,6 @@ h1 {
   border: 3px solid var(--color-ink);
   border-radius: 12px;
   scrollbar-color: var(--color-ink) var(--color-paper);
-  scrollbar-width: auto;
-}
-
-.table-scroll::-webkit-scrollbar {
-  height: 16px;
-}
-
-.table-scroll::-webkit-scrollbar-track {
-  background: var(--color-paper);
-  border-top: 1px solid var(--color-ink);
-}
-
-.table-scroll::-webkit-scrollbar-thumb {
-  background: var(--color-ink);
-  border: 2px solid var(--color-paper);
-  border-radius: 4px;
-}
-
-.table-scroll::-webkit-scrollbar-thumb:hover {
-  background: var(--color-ink);
 }
 
 .table-scroll:focus-visible {
@@ -225,13 +186,6 @@ table {
   border-collapse: separate;
   border-spacing: 0;
   table-layout: fixed;
-  text-align: left;
-}
-
-caption {
-  padding: 0 0 12px;
-  color: var(--color-placeholder);
-  font-size: 13px;
   text-align: left;
 }
 
@@ -284,12 +238,6 @@ th:last-child {
   border-radius: 0 10px 0 0;
 }
 
-tr[class="read"],
-tr[class="to-read"],
-tr[class="in-progress"] {
-  background-image: linear-gradient(180deg, var(--color-off-white), #fbfaf6);
-}
-
 tbody td {
   padding: 14px 16px;
   vertical-align: middle;
@@ -328,7 +276,6 @@ tr[class="to-read"] span[class="status"],
 tr[class="in-progress"] span[class="status"] {
   border: 1px solid transparent;
   border-radius: 999px;
-  background-image: none;
 }
 
 tr[class="read"] span[class="status"] {

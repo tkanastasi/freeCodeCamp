@@ -4,22 +4,6 @@
 
 html {
   scrollbar-color: #24231f #f7f4ec;
-  scrollbar-width: auto;
-}
-
-html::-webkit-scrollbar {
-  width: 16px;
-  height: 16px;
-}
-
-html::-webkit-scrollbar-track {
-  background: #f7f4ec;
-}
-
-html::-webkit-scrollbar-thumb {
-  background: #24231f;
-  border: 2px solid #f7f4ec;
-  border-radius: 4px;
 }
 
 body {
@@ -250,14 +234,9 @@ header h1 {
   gap: 4px;
 }
 
-.card.clubs .middle {
-  font-size: 36px;
-  transform: translateY(-6px);
-}
-
 .card.clubs.ten .middle {
-  font-size: 30px;
   line-height: 1.1;
+  gap: 0;
 }
 
 .card.clubs .left,
@@ -275,8 +254,7 @@ header h1 {
 #playing-cards:has(#hearts:checked) .card:not(.hearts),
 #playing-cards:has(#clubs:checked) .card:not(.clubs),
 #playing-cards:has(#diamonds:checked) .card:not(.diamonds) {
-  visibility: hidden;
-  position: absolute;
+  display: none;
 }
 
 @keyframes floating {
@@ -375,13 +353,5 @@ header h1 {
 
   .middle {
     font-size: 34px;
-  }
-
-  .card.clubs .middle {
-    font-size: 30px;
-  }
-
-  .card.clubs.ten .middle {
-    font-size: 26px;
   }
 }

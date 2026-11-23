@@ -16,25 +16,6 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 24px;
   scrollbar-color: var(--color-ink) var(--color-paper);
-  scrollbar-width: auto;
-}
-
-html::-webkit-scrollbar,
-#navbar ul::-webkit-scrollbar {
-  width: 16px;
-  height: 16px;
-}
-
-html::-webkit-scrollbar-track,
-#navbar ul::-webkit-scrollbar-track {
-  background: var(--color-paper);
-}
-
-html::-webkit-scrollbar-thumb,
-#navbar ul::-webkit-scrollbar-thumb {
-  background: var(--color-ink);
-  border: 2px solid var(--color-paper);
-  border-radius: 4px;
 }
 
 body {
@@ -78,7 +59,6 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   scrollbar-color: var(--color-ink) var(--color-paper);
-  scrollbar-width: auto;
 }
 
 .nav-list li {
