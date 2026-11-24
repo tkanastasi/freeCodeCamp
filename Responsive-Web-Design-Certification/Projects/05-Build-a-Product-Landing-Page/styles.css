@@ -197,6 +197,7 @@ main {
 
 .hero-content {
   max-width: 480px;
+  transform: translateY(-14px);
 }
 
 .hero-content h2 {
@@ -207,6 +208,11 @@ main {
 
 .hero-content h2 em {
   color: var(--color-terracotta);
+}
+
+.hero-content h2 span {
+  font-size: clamp(38px, 5.2vw, 62px);
+  white-space: nowrap;
 }
 
 .intro {
@@ -460,17 +466,11 @@ main {
   font-size: 13px;
 }
 
-.researcher-credit a,
-.research-link {
+.researcher-credit a {
   color: var(--color-ink);
   text-decoration-color: var(--color-terracotta);
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
-}
-
-.research-link {
-  font-size: 13px;
-  font-weight: 700;
 }
 
 .field-notes iframe {
@@ -663,6 +663,10 @@ footer p {
 
   .hero-content h2 {
     font-size: clamp(42px, 11vw, 60px);
+  }
+
+  .hero-content h2 span {
+    font-size: clamp(30px, 9vw, 42px);
   }
 
   .sound-card {
