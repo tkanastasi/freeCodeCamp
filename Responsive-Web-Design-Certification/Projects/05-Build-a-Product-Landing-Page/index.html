@@ -10,14 +10,14 @@
 
 <body>
   <header id="header">
+    <img
+      id="header-img"
+      src="https://img.icons8.com/ios-filled/100/a3ad7d/bird.png"
+      alt=""
+      hidden
+    >
     <div class="nav-inner">
       <a href="#home" class="logo">
-        <img
-          id="header-img"
-          src="https://img.icons8.com/ios-filled/100/a3ad7d/bird.png"
-          alt=""
-          hidden
-        >
         <span>FIELD<span class="logo-accent">NOTE.</span></span>
       </a>
 
@@ -32,11 +32,11 @@
   <main>
     <section class="project-header" aria-labelledby="title">
       <p class="eyebrow">PROJECTS / 05 — BUILD A PRODUCT LANDING PAGE</p>
-      <h1 id="title">Find your wild.</h1>
+      <h1 id="title">Product Landing Page</h1>
       <p class="brief-label">PROJECT BRIEF</p>
       <p class="project-brief">
-        Create a responsive landing page for a bird-call identification app, with
-        linked sections, a product demo, and an accessible email signup form.
+        Build a responsive product page with fixed navigation, an embedded video,
+        and an email signup form.
       </p>
     </section>
 
@@ -48,23 +48,25 @@
           record. Explore each bird’s call and field notes, then save your
           discoveries to a personal list.
         </p>
-        <a class="button" href="#field-notes">Hear how it works ↗</a>
+        <a class="button" href="#field-notes">Hear how it works</a>
       </div>
 
-      <div class="sound-card" role="img" aria-label="Example sound identification result for a European robin">
+      <div class="sound-card" role="group" aria-label="Example sound identification result for a European robin">
         <div class="sound-card-header">
           <span class="sound-card-label">FIELDNOTE / SOUND ID</span>
           <span class="listening-state"><span></span> LISTENING</span>
         </div>
-        <div class="sound-wave">
-          <div class="sound-wave-meta"><span>LIVE RECORDING</span><span>00:08</span></div>
-          <svg viewBox="0 0 320 52" aria-hidden="true">
-            <path class="wave-baseline" d="M0 26h320" />
-            <path class="waveform waveform-back" d="M0 26H24L32 16 40 37 50 5 60 48 70 10 80 36 90 20 100 29 110 25H124L132 18 140 39 150 8 160 44 170 14 180 34 190 22 200 28H214L222 19 230 38 240 11 250 41 260 16 270 33 280 22 290 28H320" />
-            <path class="waveform waveform-front" d="M0 26H24L32 20 40 33 50 10 60 42 70 15 80 33 90 22 100 28 110 25H124L132 19 140 36 150 12 160 40 170 17 180 31 190 23 200 27H214L222 20 230 35 240 14 250 38 260 18 270 31 280 23 290 27H320" />
-          </svg>
-        </div>
-        <div class="match-heading"><span>LIKELY MATCH</span><span class="match-count">01 / 03</span></div>
+        <figure class="bird-photo">
+          <img
+            src="https://images.unsplash.com/photo-1679001006104-32694e6090df?auto=format&fit=crop&w=1000&q=85"
+            alt="A small robin perched on a tree branch"
+          >
+          <figcaption>
+            Photo by <a href="https://unsplash.com/@itscakefortea" target="_blank" rel="noopener noreferrer">David Griffiths</a> on
+            <a href="https://unsplash.com/photos/a-small-bird-perched-on-top-of-a-tree-branch-eQkhrv1Ok4o" target="_blank" rel="noopener noreferrer">Unsplash</a>
+          </figcaption>
+        </figure>
+        <div class="match-heading"><span>LIKELY MATCH</span><span>01 / 03</span></div>
         <div class="bird-match">
           <span class="match-number">01</span>
           <div><h3>European robin</h3><p>Song · nearby</p></div>
@@ -81,7 +83,7 @@
         <article>
           <div class="feature-card-top">
             <span>01</span>
-            <span class="feature-card-label">LISTEN</span>
+            <span>LISTEN</span>
           </div>
           <h3>Listen live</h3>
           <p>Fieldnote listens as you record and brings likely calls into view, even when the singer is hidden in the trees.</p>
@@ -94,7 +96,7 @@
         <article>
           <div class="feature-card-top">
             <span>02</span>
-            <span class="feature-card-label">IDENTIFY</span>
+            <span>IDENTIFY</span>
           </div>
           <h3>Meet the singer</h3>
           <p>Open a likely match to explore its range, field marks, and reference calls before settling on an identification.</p>
@@ -107,7 +109,7 @@
         <article>
           <div class="feature-card-top">
             <span>03</span>
-            <span class="feature-card-label">REMEMBER</span>
+            <span>REMEMBER</span>
           </div>
           <h3>Keep your finds</h3>
           <p>Save a species with a note, then return to past discoveries as your own record of birds and places grows.</p>
@@ -120,8 +122,7 @@
     </section>
 
     <section id="field-notes" class="field-notes">
-      <div class="field-notes-copy">
-        <p class="research-kicker">FIELD TEST / CORNELL LAB</p>
+      <div>
         <h2>How Sound ID learns to listen.</h2>
         <p>
           In a Cornell Lab challenge, Merlin went head-to-head with two expert
@@ -142,7 +143,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          Read the Cornell Lab discussion ↗
+          Read the Cornell Lab discussion
         </a>
       </div>
 
@@ -165,7 +166,7 @@
           placeholder="Your email address"
           required
         >
-        <input id="submit" type="submit" value="Keep me posted ↗">
+        <input id="submit" type="submit" value="Keep me posted">
       </form>
     </section>
 
