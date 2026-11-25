@@ -39,8 +39,10 @@
         <h2>Identify birds by <span>sound.</span></h2>
         <p class="intro">
           Fieldnote listens to nearby birdsong and suggests likely species as you
-          record. Explore each bird’s call and field notes, then save your
-          discoveries to a personal list.
+          record. Compare each match with reference calls and field notes,
+          including range and identifying features.<br><br>
+          When you spot a bird, save
+          the species, place, and date to build a personal list of discoveries.
         </p>
         <a class="button" href="#field-notes">Hear how it works</a>
       </div>
@@ -66,15 +68,11 @@
           <div><h3>European robin</h3><p>Song · nearby</p></div>
           <span class="match-score">94%</span>
         </div>
-        <button class="match-footer" type="button" aria-label="Play European robin song" aria-pressed="false">
-          <span class="call-label">PLAY CALL</span>
-          <span class="play-mark" aria-hidden="true">▶</span>
-        </button>
         <audio
-          id="robin-call"
           src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Erithacus_rubecula.ogg"
+          controls
           preload="none"
-        ></audio>
+        >Your browser does not support audio playback.</audio>
         <p class="audio-credit">
           Song by <a href="https://commons.wikimedia.org/wiki/File:Erithacus_rubecula.ogg" target="_blank" rel="noopener noreferrer">Vladimir Yu. Arkhipov</a>,
           <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>
@@ -182,44 +180,5 @@
   >
     VIEW SOURCE ON GITHUB · @tkanastasi
   </a>
-  <script>
-    const robinAudio = document.querySelector("#robin-call");
-    const playButton = document.querySelector(".match-footer");
-    const playLabel = playButton.querySelector(".call-label");
-    const playIcon = playButton.querySelector(".play-mark");
-
-    function resetPlayback() {
-      playLabel.textContent = "PLAY CALL";
-      playIcon.textContent = "▶";
-      playButton.setAttribute("aria-label", "Play European robin song");
-      playButton.setAttribute("aria-pressed", "false");
-    }
-
-    playButton.addEventListener("click", async () => {
-      if (robinAudio.paused) {
-        try {
-          await robinAudio.play();
-        } catch {
-          playLabel.textContent = "AUDIO UNAVAILABLE";
-        }
-      } else {
-        robinAudio.pause();
-      }
-    });
-
-    robinAudio.addEventListener("play", () => {
-      playLabel.textContent = "PAUSE CALL";
-      playIcon.textContent = "❚❚";
-      playButton.setAttribute("aria-label", "Pause European robin song");
-      playButton.setAttribute("aria-pressed", "true");
-    });
-
-    robinAudio.addEventListener("pause", resetPlayback);
-    robinAudio.addEventListener("ended", resetPlayback);
-    robinAudio.addEventListener("error", () => {
-      playLabel.textContent = "AUDIO UNAVAILABLE";
-      playButton.disabled = true;
-    });
-  </script>
 </body>
 </html>
