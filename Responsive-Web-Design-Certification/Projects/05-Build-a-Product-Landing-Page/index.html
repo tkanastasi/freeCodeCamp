@@ -10,15 +10,9 @@
 
 <body>
   <header id="header">
-    <img
-      id="header-img"
-      src="https://img.icons8.com/ios-filled/100/a3ad7d/bird.png"
-      alt=""
-      hidden
-    >
     <div class="nav-inner">
       <a href="#home" class="logo">
-        <span>FIELD<span class="logo-accent">NOTE</span></span>
+        <span>Field<span class="logo-accent">Note</span></span>
       </a>
 
       <nav id="nav-bar">
@@ -42,7 +36,7 @@
 
     <section class="hero" id="home">
       <div class="hero-content">
-        <h2>Hear a call.<br><span>Meet the <em>singer.</em></span></h2>
+        <h2>Identify birds by <span>sound.</span></h2>
         <p class="intro">
           Fieldnote listens to nearby birdsong and suggests likely species as you
           record. Explore each bird’s call and field notes, then save your
@@ -72,7 +66,19 @@
           <div><h3>European robin</h3><p>Song · nearby</p></div>
           <span class="match-score">94%</span>
         </div>
-        <div class="match-footer"><span>PLAY CALL</span><span class="play-mark">▶</span></div>
+        <button class="match-footer" type="button" aria-label="Play European robin song" aria-pressed="false">
+          <span class="call-label">PLAY CALL</span>
+          <span class="play-mark" aria-hidden="true">▶</span>
+        </button>
+        <audio
+          id="robin-call"
+          src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Erithacus_rubecula.ogg"
+          preload="none"
+        ></audio>
+        <p class="audio-credit">
+          Song by <a href="https://commons.wikimedia.org/wiki/File:Erithacus_rubecula.ogg" target="_blank" rel="noopener noreferrer">Vladimir Yu. Arkhipov</a>,
+          <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>
+        </p>
       </div>
     </section>
 
@@ -102,7 +108,7 @@
           <p>Open a likely match to explore its range, field marks, and reference calls before settling on an identification.</p>
           <div class="feature-example">
             <span>SPECIES GUIDE</span>
-            <strong>Range · field notes · call samples</strong>
+            <strong>Range, field notes, and call samples</strong>
           </div>
         </article>
 
@@ -115,7 +121,7 @@
           <p>Save a species with a note, then return to past discoveries as your own record of birds and places grows.</p>
           <div class="feature-example">
             <span>YOUR FIELD LIST</span>
-            <strong>Species · place · date</strong>
+            <strong>Species, place, and date</strong>
           </div>
         </article>
       </div>
@@ -176,5 +182,44 @@
   >
     VIEW SOURCE ON GITHUB · @tkanastasi
   </a>
+  <script>
+    const robinAudio = document.querySelector("#robin-call");
+    const playButton = document.querySelector(".match-footer");
+    const playLabel = playButton.querySelector(".call-label");
+    const playIcon = playButton.querySelector(".play-mark");
+
+    function resetPlayback() {
+      playLabel.textContent = "PLAY CALL";
+      playIcon.textContent = "▶";
+      playButton.setAttribute("aria-label", "Play European robin song");
+      playButton.setAttribute("aria-pressed", "false");
+    }
+
+    playButton.addEventListener("click", async () => {
+      if (robinAudio.paused) {
+        try {
+          await robinAudio.play();
+        } catch {
+          playLabel.textContent = "AUDIO UNAVAILABLE";
+        }
+      } else {
+        robinAudio.pause();
+      }
+    });
+
+    robinAudio.addEventListener("play", () => {
+      playLabel.textContent = "PAUSE CALL";
+      playIcon.textContent = "❚❚";
+      playButton.setAttribute("aria-label", "Pause European robin song");
+      playButton.setAttribute("aria-pressed", "true");
+    });
+
+    robinAudio.addEventListener("pause", resetPlayback);
+    robinAudio.addEventListener("ended", resetPlayback);
+    robinAudio.addEventListener("error", () => {
+      playLabel.textContent = "AUDIO UNAVAILABLE";
+      playButton.disabled = true;
+    });
+  </script>
 </body>
 </html>

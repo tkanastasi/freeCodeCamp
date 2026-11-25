@@ -100,7 +100,7 @@ main,
   padding: 8px 12px;
   border-bottom: 3px solid transparent;
   color: var(--color-paper);
-  font-size: 14px;
+  font-size: 15px;
   text-decoration: none;
   transition: border-color 0.2s;
 }
@@ -206,13 +206,9 @@ main {
   line-height: 1.05;
 }
 
-.hero-content h2 em {
-  color: var(--color-terracotta);
-}
-
 .hero-content h2 span {
-  font-size: clamp(38px, 5.2vw, 62px);
-  white-space: nowrap;
+  color: var(--color-terracotta);
+  font-style: italic;
 }
 
 .intro {
@@ -319,6 +315,7 @@ main {
   height: 7px;
   background: var(--color-ink);
   border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
 }
 
 .match-heading {
@@ -362,8 +359,23 @@ main {
 }
 
 .match-footer {
+  width: 100%;
   padding-top: 10px;
+  border: 0;
   border-top: 1px solid var(--color-muted-text);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.12s;
+}
+
+.match-footer:active {
+  transform: translateY(2px);
 }
 
 .play-mark {
@@ -376,8 +388,26 @@ main {
   border-radius: 50%;
 }
 
-.features {
-  padding: 48px;
+.play-mark {
+  transition: transform 0.12s;
+}
+
+.match-footer:active .play-mark {
+  transform: scale(0.92);
+}
+
+.audio-credit {
+  margin: 8px 0 0;
+  color: var(--color-ink);
+  font-size: 9px;
+  opacity: 0.7;
+  text-align: right;
+}
+
+.audio-credit a {
+  color: inherit;
+  text-decoration-color: var(--color-terracotta);
+  text-underline-offset: 2px;
 }
 
 .features h2,
@@ -386,6 +416,10 @@ main {
   margin: 0 0 24px;
   font-size: clamp(34px, 4vw, 48px);
   line-height: 1.15;
+}
+
+.features {
+  padding: 48px;
 }
 
 .feature-grid {
@@ -534,6 +568,7 @@ footer {
 
 footer p {
   margin: 0;
+  text-align: right;
 }
 
 .github-source-link {
@@ -562,6 +597,13 @@ footer p {
   }
 }
 
+@keyframes pulse {
+  50% {
+    opacity: 0.45;
+    transform: scale(0.7);
+  }
+}
+
 @media (max-width: 1360px) {
   body::after {
     display: none;
@@ -569,13 +611,13 @@ footer p {
 }
 
 @media (max-width: 900px) {
+  .features {
+    padding: 34px;
+  }
+
   .hero {
     grid-template-columns: 1fr 0.9fr;
     gap: 30px;
-  }
-
-  .features {
-    padding: 34px;
   }
 
   .feature-grid {
@@ -589,6 +631,16 @@ footer p {
   .field-notes {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .github-source-link {
+    position: static;
+    display: block;
+    width: fit-content;
+    margin: 34px auto 4px;
+    writing-mode: horizontal-tb;
   }
 }
 
@@ -621,16 +673,12 @@ footer p {
 
   .nav-link {
     padding: 6px 8px;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   main {
     margin-top: 22px;
     margin-bottom: 30px;
-  }
-
-  .project-header {
-    padding: 32px 24px;
   }
 
   .project-header .eyebrow {
@@ -658,23 +706,14 @@ footer p {
   .hero {
     grid-template-columns: 1fr;
     gap: 34px;
-    padding: 56px 24px 64px;
   }
 
   .hero-content h2 {
     font-size: clamp(42px, 11vw, 60px);
   }
 
-  .hero-content h2 span {
-    font-size: clamp(30px, 9vw, 42px);
-  }
-
   .sound-card {
     justify-self: center;
-  }
-
-  .features {
-    padding: 28px 20px;
   }
 
   .feature-grid {
@@ -683,6 +722,18 @@ footer p {
 
   .feature-grid article {
     flex-basis: auto;
+  }
+
+  .project-header {
+    padding: 32px 24px;
+  }
+
+  .hero {
+    padding: 56px 24px 64px;
+  }
+
+  .features {
+    padding: 28px 20px;
   }
 
   .field-notes {
@@ -705,13 +756,6 @@ footer p {
     padding-inline: 20px;
   }
 
-  .github-source-link {
-    position: static;
-    display: block;
-    width: fit-content;
-    margin: 0 auto 18px;
-    writing-mode: horizontal-tb;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
