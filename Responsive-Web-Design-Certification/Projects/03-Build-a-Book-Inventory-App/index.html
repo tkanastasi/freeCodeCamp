@@ -12,14 +12,21 @@
 <body>
   <div class="inventory-shell">
   <header>
-    <p class="eyebrow">PROJECTS / 03 — BUILD A BOOK INVENTORY APP</p>
-    <h1>Book Inventory</h1>
-    <p class="brief-label">PROJECT BRIEF</p>
-    <p class="description">
-      Build a book inventory with a semantic table, reading statuses, and ratings.
-      Use CSS attribute selectors and gradients to distinguish reading progress
-      and personal ratings.
-    </p>
+    <details class="project-disclosure" open>
+      <summary class="project-disclosure-toggle">
+        <span class="eyebrow">PROJECTS / 03 — BUILD A BOOK INVENTORY APP</span>
+        <span class="project-disclosure-icon" aria-hidden="true"></span>
+      </summary>
+      <div class="project-header-content">
+        <h1>Book Inventory</h1>
+        <p class="brief-label">PROJECT BRIEF</p>
+        <p class="description">
+          Build a book inventory with a semantic table, reading statuses, and ratings.
+          Use CSS attribute selectors and gradients to distinguish reading progress
+          and personal ratings.
+        </p>
+      </div>
+    </details>
   </header>
 
   <main class="inventory-panel">
@@ -108,6 +115,19 @@
           <td><span class="status">Read</span></td>
           <td>
             <span class="rate two">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </td>
+        </tr>
+        <tr class="in-progress">
+          <td>The Old Man and the Sea</td>
+          <td>Ernest Hemingway</td>
+          <td>Novella</td>
+          <td><span class="status">In Progress</span></td>
+          <td>
+            <span class="rate">
               <span></span>
               <span></span>
               <span></span>

@@ -53,28 +53,75 @@ body::after {
 }
 
 header {
-  max-width: 1180px;
-  width: calc(100% - 160px);
-  margin: 0 auto 38px;
-  padding: 48px;
+  width: 100%;
+  margin: 0;
+  padding: 32px 48px;
   background: #24231f;
   color: #fffefa;
-  border: 2px solid #24231f;
-  border-radius: 24px;
   position: relative;
   overflow: hidden;
-  box-shadow: 8px 8px 0 #a3ad7d;
 }
 
-header::after {
-  content: "✳";
+.project-disclosure-toggle {
+  position: relative;
+  margin-bottom: 24px;
+  pointer-events: none;
+  list-style: none;
+}
+
+.project-disclosure-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.project-disclosure-toggle .eyebrow {
+  margin-bottom: 0;
+}
+
+.project-disclosure-icon {
   position: absolute;
-  right: 45px;
-  top: 30px;
-  font-size: 90px;
-  color: #a3ad7d;
-  opacity: 0.8;
-  animation: floating 5s ease-in-out infinite;
+  top: 50%;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  pointer-events: auto;
+  transform: translateY(-50%);
+  animation: caret-bob 1.2s ease-in-out 1;
+}
+
+.project-disclosure-icon::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 13px;
+  height: 13px;
+  border-right: 2.5px solid #fffefa;
+  border-bottom: 2.5px solid #fffefa;
+  content: "";
+  transform: translate(-50%, -50%) rotate(225deg);
+}
+
+.project-disclosure-toggle:hover .project-disclosure-icon,
+.project-disclosure-toggle:focus-visible .project-disclosure-icon {
+  animation: caret-bob 1.2s ease-in-out infinite alternate;
+}
+
+.project-disclosure:not([open]) .project-disclosure-toggle {
+  margin-bottom: 0;
+}
+
+.project-disclosure:not([open]) .project-disclosure-icon::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.playing-card-shell:has(.project-disclosure:not([open])) header {
+  padding-block: 12px;
+}
+
+@keyframes caret-bob {
+  50% {
+    transform: translateY(calc(-50% - 3px));
+  }
 }
 
 .eyebrow {
@@ -120,15 +167,22 @@ header h1 {
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
-  width: calc(100% - 160px);
-  max-width: 1180px;
+  width: 100%;
   min-height: 90vh;
-  margin: 45px auto;
+  margin: 0;
   padding: 36px;
   background: #687451;
-  border: 12px solid #24231f;
+}
+
+.playing-card-shell {
+  width: calc(100% - 160px);
+  max-width: 1180px;
+  margin: 0 auto 45px;
+  overflow: hidden;
+  background: #687451;
+  border: 2px solid #24231f;
   border-radius: 28px;
-  box-shadow: 10px 10px 0 #b96347;
+  box-shadow: 8px 8px 0 #b96347;
 }
 
 .suit-selector {
@@ -257,16 +311,6 @@ header h1 {
   display: none;
 }
 
-@keyframes floating {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-
-  50% {
-    transform: translateY(-12px) rotate(15deg);
-  }
-}
-
 @keyframes slow-rotate {
   from {
     transform: rotate(0deg);
@@ -292,15 +336,13 @@ header h1 {
     writing-mode: horizontal-tb;
   }
 
-  header,
-  #playing-cards {
+  .playing-card-shell {
     width: calc(100% - 40px);
   }
 }
 
 @media (max-width: 900px) {
-  header,
-  #playing-cards {
+  .playing-card-shell {
     width: 100%;
   }
 
@@ -315,20 +357,13 @@ header h1 {
   }
 
   header {
-    padding: 30px 24px;
-    margin-bottom: 24px;
-  }
-
-  header::after {
-    right: 15px;
-    top: 15px;
-    font-size: 55px;
+    padding: 24px;
   }
 
   .eyebrow {
     position: relative;
     z-index: 1;
-    max-width: calc(100% - 58px);
+    max-width: calc(100% - 40px);
     padding: 6px 9px;
     font-size: 10px;
     letter-spacing: 1.4px;
@@ -340,10 +375,13 @@ header h1 {
   }
 
   #playing-cards {
-    margin: 0 auto;
     padding: 16px;
-    border-width: 8px;
     gap: 14px;
+  }
+
+  .playing-card-shell {
+    margin-bottom: 24px;
+    border-width: 2px;
   }
 
   .left,
@@ -353,5 +391,13 @@ header h1 {
 
   .middle {
     font-size: 34px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-disclosure-icon,
+  .project-disclosure-toggle:hover .project-disclosure-icon,
+  .project-disclosure-toggle:focus-visible .project-disclosure-icon {
+    animation: none;
   }
 }

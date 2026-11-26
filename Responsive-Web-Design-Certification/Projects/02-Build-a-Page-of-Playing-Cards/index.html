@@ -10,17 +10,24 @@
 </head>
 
 <body>
+  <div class="playing-card-shell">
   <header>
-    <p class="eyebrow">PROJECTS / 02 — BUILD A PAGE OF PLAYING CARDS</p>
+    <details class="project-disclosure" open>
+      <summary class="project-disclosure-toggle">
+        <span class="eyebrow">PROJECTS / 02 — BUILD A PAGE OF PLAYING CARDS</span>
+        <span class="project-disclosure-icon" aria-hidden="true"></span>
+      </summary>
+      <div class="project-header-content">
+        <h1>The Card Table</h1>
 
-    <h1>The Card Table</h1>
-
-    <p class="brief-label">PROJECT BRIEF</p>
-    <p class="description">
-      Build a webpage displaying a collection of playing cards. Use Flexbox to
-      arrange the cards, align their elements, and create a responsive layout
-      with suit selection.
-    </p>
+        <p class="brief-label">PROJECT BRIEF</p>
+        <p class="description">
+          Build a webpage displaying a collection of playing cards. Use Flexbox to
+          arrange the cards, align their elements, and create a responsive layout
+          with suit selection.
+        </p>
+      </div>
+    </details>
   </header>
   <main id="playing-cards">
     <div class="suit-selector">
@@ -691,6 +698,7 @@
     </div>
 
   </main>
+  </div>
 
   <a
     class="github-source-link"

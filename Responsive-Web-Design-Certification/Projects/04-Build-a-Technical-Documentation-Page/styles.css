@@ -94,6 +94,15 @@ body {
   padding: 36px clamp(28px, 5vw, 72px) 80px;
 }
 
+.intro-shell {
+  margin-bottom: 24px;
+  overflow: hidden;
+  background: var(--color-off-white);
+  border: 2px solid var(--color-ink);
+  border-radius: 24px;
+  box-shadow: 8px 8px 0 var(--color-matcha);
+}
+
 .page-header {
   position: relative;
   isolation: isolate;
@@ -107,18 +116,73 @@ body {
   color: var(--color-paper);
 }
 
-.page-header::after {
-  content: "✳";
-  position: absolute;
-  z-index: -1;
-  top: 4px;
-  right: 22px;
-  color: var(--color-matcha);
-  font-size: 96px;
-  line-height: 1;
-  opacity: 0.8;
+.intro-shell .page-header {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.project-disclosure-toggle {
+  position: relative;
+  margin-bottom: 22px;
   pointer-events: none;
-  animation: floating 5s ease-in-out infinite;
+  list-style: none;
+}
+
+.project-disclosure-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.project-disclosure-toggle .eyebrow {
+  margin-bottom: 0;
+}
+
+.project-disclosure-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  pointer-events: auto;
+  transform: translateY(-50%);
+  animation: caret-bob 1.2s ease-in-out 1;
+}
+
+.project-disclosure-icon::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 13px;
+  height: 13px;
+  border-right: 2.5px solid var(--color-paper);
+  border-bottom: 2.5px solid var(--color-paper);
+  content: "";
+  transform: translate(-50%, -50%) rotate(225deg);
+}
+
+.project-disclosure-toggle:hover .project-disclosure-icon,
+.project-disclosure-toggle:focus-visible .project-disclosure-icon {
+  animation: caret-bob 1.2s ease-in-out infinite alternate;
+}
+
+.project-disclosure:not([open]) .project-disclosure-toggle {
+  margin-bottom: 0;
+}
+
+.project-disclosure:not([open]) .project-disclosure-icon::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.page-header:has(.project-disclosure:not([open])) {
+  padding-block: 12px;
+}
+
+@keyframes caret-bob {
+  50% {
+    transform: translateY(calc(-50% - 3px));
+  }
 }
 
 .eyebrow {
@@ -179,6 +243,13 @@ body {
   border-radius: 16px;
   box-shadow: 4px 4px 0 var(--color-matcha);
   scroll-margin-top: 24px;
+}
+
+.intro-shell #Introduction {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .main-section > header {
@@ -288,17 +359,6 @@ kbd {
   color: var(--color-ink);
 }
 
-@keyframes floating {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0);
-  }
-
-  50% {
-    transform: translateY(12px) rotate(20deg);
-  }
-}
-
 @media (max-width: 1200px) {
   .github-source-link {
     position: static;
@@ -309,7 +369,7 @@ kbd {
   }
 
   .page-header .eyebrow {
-    max-width: calc(100% - 84px);
+    max-width: calc(100% - 40px);
   }
 }
 
@@ -354,23 +414,26 @@ kbd {
   }
 
   .page-header {
-    margin-bottom: 24px;
+    margin-bottom: 0;
     padding: 30px 24px;
+    border-radius: 0;
+  }
+
+  .intro-shell {
+    margin-bottom: 20px;
     border-radius: 20px;
   }
 
-  .page-header::after {
-    top: 8px;
-    right: 8px;
-    font-size: 64px;
-  }
-
   .eyebrow {
-    max-width: calc(100% - 84px);
+    max-width: calc(100% - 40px);
     margin-bottom: 18px;
     padding: 6px 9px;
     font-size: 10px;
     letter-spacing: 1.4px;
+  }
+
+  .project-disclosure-toggle {
+    margin-bottom: 18px;
   }
 
   .page-header h1 {

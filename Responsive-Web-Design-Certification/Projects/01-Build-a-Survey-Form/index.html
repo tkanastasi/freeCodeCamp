@@ -68,27 +68,89 @@
         z-index: 1;
       }
 
-      header {
+      main {
         overflow: hidden;
         max-width: 900px;
         margin: 0 auto 38px;
-        padding: 48px;
-        background: #24231f;
-        color: #f7f4ec;
+        background: #fffefa;
         border: 2px solid #24231f;
         border-radius: 24px;
         box-shadow: 8px 8px 0 #a3ad7d;
       }
 
-      header::after {
-        content: "✳";
+      header {
+        overflow: hidden;
+        margin: 0;
+        padding: 48px;
+        background: #24231f;
+        color: #f7f4ec;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .project-disclosure-toggle {
+        position: relative;
+        margin-bottom: 22px;
+        pointer-events: none;
+        list-style: none;
+      }
+
+      .project-disclosure-toggle::-webkit-details-marker {
+        display: none;
+      }
+
+      .project-disclosure-toggle .eyebrow {
+        position: static;
+        margin-bottom: 0;
+      }
+
+      .project-disclosure-icon {
         position: absolute;
-        top: 15px;
-        right: 35px;
-        color: #a3ad7d;
-        font-size: 90px;
-        opacity: 0.8;
-        animation: floating 5s ease-in-out infinite;
+        top: 50%;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        pointer-events: auto;
+        --toggle-angle: 225deg;
+        transform: translateY(-50%);
+        animation: caret-bob 1.2s ease-in-out 1;
+      }
+
+      .project-disclosure-icon::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 13px;
+        height: 13px;
+        border-right: 2.5px solid #f7f4ec;
+        border-bottom: 2.5px solid #f7f4ec;
+        content: "";
+        transform: translate(-50%, -50%) rotate(var(--toggle-angle));
+      }
+
+      .project-disclosure-toggle:hover .project-disclosure-icon,
+      .project-disclosure-toggle:focus-visible .project-disclosure-icon {
+        animation: caret-bob 1.2s ease-in-out infinite alternate;
+      }
+
+      .project-disclosure:not([open]) .project-disclosure-toggle {
+        margin-bottom: 0;
+      }
+
+      header:has(.project-disclosure:not([open])) {
+        padding-block: 12px;
+      }
+
+      .project-disclosure:not([open]) .project-disclosure-icon {
+        --toggle-angle: 45deg;
+      }
+
+      @keyframes caret-bob {
+        50% {
+          transform: translateY(calc(-50% - 3px));
+        }
       }
 
       .eyebrow {
@@ -135,16 +197,15 @@
       }
 
       main {
-        max-width: 900px;
-        margin: 0 auto;
+        width: 100%;
       }
 
       #survey-form {
         padding: 42px;
         background: #fffefa;
-        border: 2px solid #24231f;
-        border-radius: 24px;
-        box-shadow: 10px 10px 0 #b96347;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
       }
 
       .form-intro {
@@ -408,16 +469,6 @@
         box-shadow: none;
       }
 
-      @keyframes floating {
-        0%, 100% {
-          transform: translateY(0) rotate(0);
-        }
-
-        50% {
-          transform: translateY(12px) rotate(20deg);
-        }
-      }
-
       @keyframes slow-rotate {
         from {
           transform: rotate(0);
@@ -451,11 +502,6 @@
           padding: 32px 24px;
         }
 
-        header::after {
-          right: 10px;
-          font-size: 65px;
-        }
-
         .eyebrow {
           position: relative;
           z-index: 1;
@@ -480,7 +526,6 @@
 
         #survey-form {
           padding: 24px 18px;
-          box-shadow: 6px 6px 0 #a3ad7d;
         }
 
         fieldset {
@@ -526,20 +571,26 @@
   </head>
 
   <body>
-    <header>
-      <p class="eyebrow">PROJECTS / 01 — BUILD A SURVEY FORM</p>
-
-      <h1 id="title">Hiking Experience Survey</h1>
-
-      <p class="brief-label">PROJECT BRIEF</p>
-      <p id="description">
-        Build an accessible survey form using semantic HTML, labeled inputs,
-        native validation, a dropdown, radio buttons, checkboxes, and a
-        comments field.
-      </p>
-    </header>
-
     <main>
+      <header>
+        <details class="project-disclosure" open>
+          <summary class="project-disclosure-toggle">
+            <span class="eyebrow">PROJECTS / 01 — BUILD A SURVEY FORM</span>
+            <span class="project-disclosure-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="project-header-content">
+            <h1 id="title">Hiking Experience Survey</h1>
+
+            <p class="brief-label">PROJECT BRIEF</p>
+            <p id="description">
+              Build an accessible survey form using semantic HTML, labeled inputs,
+              native validation, a dropdown, radio buttons, checkboxes, and a
+              comments field.
+            </p>
+          </div>
+        </details>
+      </header>
+
       <form id="survey-form">
         <p class="form-intro">
           Thank you for joining our hiking trip! Please share your

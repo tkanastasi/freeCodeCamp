@@ -102,16 +102,66 @@ header {
   box-shadow: none;
 }
 
-header::after {
-  content: "✳";
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: var(--color-matcha);
-  font-size: 90px;
-  opacity: 0.8;
+.project-disclosure-toggle {
+  position: relative;
+  margin-bottom: 22px;
   pointer-events: none;
-  animation: floating 5s ease-in-out infinite;
+  list-style: none;
+}
+
+.project-disclosure-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.project-disclosure-toggle .eyebrow {
+  margin-bottom: 0;
+}
+
+.project-disclosure-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  pointer-events: auto;
+  transform: translateY(-50%);
+  animation: caret-bob 1.2s ease-in-out 1;
+}
+
+.project-disclosure-icon::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 13px;
+  height: 13px;
+  border-right: 2.5px solid var(--color-paper);
+  border-bottom: 2.5px solid var(--color-paper);
+  content: "";
+  transform: translate(-50%, -50%) rotate(225deg);
+}
+
+.project-disclosure-toggle:hover .project-disclosure-icon,
+.project-disclosure-toggle:focus-visible .project-disclosure-icon {
+  animation: caret-bob 1.2s ease-in-out infinite alternate;
+}
+
+.project-disclosure:not([open]) .project-disclosure-toggle {
+  margin-bottom: 0;
+}
+
+.project-disclosure:not([open]) .project-disclosure-icon::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+header:has(.project-disclosure:not([open])) {
+  padding-block: 12px;
+}
+
+@keyframes caret-bob {
+  50% {
+    transform: translateY(calc(-50% - 3px));
+  }
 }
 
 .eyebrow {
@@ -336,16 +386,6 @@ span[class~="three"] span {
   background-image: linear-gradient(135deg, var(--color-terracotta), #8f4937);
 }
 
-@keyframes floating {
-  0%, 100% {
-    transform: translateY(0) rotate(0);
-  }
-
-  50% {
-    transform: translateY(12px) rotate(20deg);
-  }
-}
-
 @keyframes slow-rotate {
   from {
     transform: rotate(0);
@@ -391,14 +431,8 @@ span[class~="three"] span {
     padding: 32px 24px;
   }
 
-  header::after {
-    top: 10px;
-    right: 8px;
-    font-size: 65px;
-  }
-
   .eyebrow {
-    max-width: calc(100% - 58px);
+    max-width: calc(100% - 40px);
     margin-bottom: 18px;
     padding: 6px 9px;
     font-size: 10px;
