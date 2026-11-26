@@ -288,9 +288,13 @@ header h1 {
   gap: 4px;
 }
 
-.card.clubs.ten .middle {
+.card.clubs .middle {
   line-height: 1.1;
   gap: 0;
+}
+
+.card.clubs .middle span {
+  white-space: nowrap;
 }
 
 .card.clubs .left,
@@ -380,12 +384,18 @@ header h1 {
   .middle {
     font-size: 34px;
   }
+
+  .card.clubs .middle {
+    line-height: 1.1;
+    gap: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .project-disclosure-icon,
-  .project-disclosure-toggle:hover .project-disclosure-icon,
-  .project-disclosure-toggle:focus-visible .project-disclosure-icon {
-    animation: none;
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }

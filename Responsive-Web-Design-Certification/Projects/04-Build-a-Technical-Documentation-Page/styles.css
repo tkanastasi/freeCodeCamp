@@ -14,7 +14,6 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 24px;
   scrollbar-color: var(--color-ink) var(--color-paper);
 }
 
@@ -245,6 +244,11 @@ body {
   scroll-margin-top: 24px;
 }
 
+.intro-shell:has(+ .main-section:target),
+.main-section:has(+ .main-section:target) {
+  box-shadow: none;
+}
+
 .intro-shell #Introduction {
   margin: 0;
   border: 0;
@@ -472,7 +476,6 @@ kbd {
   *::before,
   *::after {
     animation: none !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
+    transition: none !important;
   }
 }
