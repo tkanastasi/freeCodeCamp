@@ -87,7 +87,6 @@ header {
   padding: 42px 48px;
   background: var(--color-ink);
   color: var(--color-paper);
-  border-bottom: 2px solid var(--color-ink);
 }
 
 .project-disclosure-toggle {
@@ -99,10 +98,6 @@ header {
 
 .project-disclosure-toggle::-webkit-details-marker {
   display: none;
-}
-
-.project-disclosure-toggle .eyebrow {
-  margin-bottom: 0;
 }
 
 .project-disclosure-icon {
@@ -156,7 +151,7 @@ header:has(.project-disclosure:not([open])) {
   position: relative;
   z-index: 1;
   display: inline-block;
-  margin: 0 0 22px;
+  margin: 0;
   padding: 9px 14px;
   background: var(--color-terracotta);
   border-radius: 4px;
@@ -170,12 +165,11 @@ header:has(.project-disclosure:not([open])) {
 h1 {
   position: relative;
   z-index: 1;
-  margin: 0 0 18px;
+  margin: 0 0 20px;
   font-family: Georgia, serif;
-  font-size: clamp(42px, 6vw, 68px);
+  font-size: clamp(30px, 6vw, 54px);
   font-weight: normal;
   line-height: 1.05;
-  letter-spacing: -2px;
 }
 
 .brief-label {
@@ -378,6 +372,12 @@ span[class~="three"] span {
   }
 }
 
+@media (max-width: 1360px) {
+  body::after {
+    display: none;
+  }
+}
+
 @media (max-width: 1200px) {
   .github-source-link {
     position: static;
@@ -398,12 +398,6 @@ span[class~="three"] span {
   }
 }
 
-@media (max-width: 1360px) {
-  body::after {
-    display: none;
-  }
-}
-
 @media (max-width: 700px) {
   body {
     padding: 20px 14px;
@@ -413,9 +407,12 @@ span[class~="three"] span {
     padding: 32px 24px;
   }
 
+  .project-disclosure-toggle {
+    margin-bottom: 18px;
+  }
+
   .eyebrow {
     max-width: calc(100% - 40px);
-    margin-bottom: 18px;
     padding: 6px 9px;
     font-size: 10px;
     letter-spacing: 1.4px;

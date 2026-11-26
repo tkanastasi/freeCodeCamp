@@ -147,8 +147,7 @@ main {
   position: relative;
   pointer-events: none;
   list-style: none;
-  cursor: pointer;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
 }
 
 .project-header-toggle::-webkit-details-marker {
@@ -162,6 +161,7 @@ main {
   width: 20px;
   height: 20px;
   pointer-events: auto;
+  cursor: pointer;
   --toggle-angle: 225deg;
   transform: translateY(-50%);
   animation: caret-bob 1.2s ease-in-out 1;
@@ -181,7 +181,6 @@ main {
 
 .project-header-toggle .eyebrow {
   position: static;
-  margin-bottom: 0;
 }
 
 .project-header-toggle:hover .project-header-toggle-icon,
@@ -214,7 +213,6 @@ main {
 
 .eyebrow {
   display: inline-block;
-  margin-bottom: 18px;
   padding: 9px 14px;
   background: var(--color-terracotta);
   border-radius: 4px;
@@ -228,7 +226,7 @@ main {
   position: relative;
   z-index: 1;
   margin: 0 0 20px;
-  font-size: clamp(38px, 6vw, 68px);
+  font-size: clamp(30px, 6vw, 54px);
   line-height: 1.05;
 }
 
@@ -277,6 +275,10 @@ main {
 
 .intro {
   margin: 0;
+}
+
+.intro + .intro {
+  margin-top: 16px;
 }
 
 .button,
@@ -424,17 +426,17 @@ main {
   font-weight: 700;
 }
 
+audio,
+audio::-webkit-media-controls-panel {
+  background: #ebe8e0;
+}
+
 audio {
   display: block;
   width: 100%;
   margin-top: 12px;
-  background: #ebe8e0;
   border-radius: 8px;
   accent-color: var(--color-terracotta);
-}
-
-audio::-webkit-media-controls-panel {
-  background: #ebe8e0;
 }
 
 .audio-credit {
@@ -663,6 +665,16 @@ footer p {
   }
 }
 
+@media (max-width: 1200px) {
+  .github-source-link {
+    position: static;
+    display: block;
+    width: fit-content;
+    margin: 34px auto 4px;
+    writing-mode: horizontal-tb;
+  }
+}
+
 @media (max-width: 1000px) {
   .hero-content h2 {
     font-size: clamp(54px, 7vw, 68px);
@@ -693,16 +705,6 @@ footer p {
   .field-notes {
     grid-template-columns: 1fr;
     gap: 24px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .github-source-link {
-    position: static;
-    display: block;
-    width: fit-content;
-    margin: 34px auto 4px;
-    writing-mode: horizontal-tb;
   }
 }
 
@@ -753,7 +755,6 @@ footer p {
 
   .project-header h1 {
     max-width: 100%;
-    font-size: 42px;
   }
 
   .hero {
@@ -784,6 +785,10 @@ footer p {
 
   .project-header {
     padding: 32px 24px;
+  }
+
+  .project-header-toggle {
+    margin-bottom: 18px;
   }
 
   .project-header:not([open]) {
