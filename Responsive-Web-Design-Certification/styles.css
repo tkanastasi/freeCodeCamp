@@ -85,6 +85,16 @@ h1 {
   color: var(--color-muted);
 }
 
+.eyebrow a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.eyebrow a:hover,
+.eyebrow a:focus-visible {
+  color: var(--color-accent);
+}
+
 .portfolio-main {
   width: min(100%, 1000px);
   margin: 0 auto;
