@@ -260,7 +260,6 @@ body {
   margin: 0;
   padding: 0 0 12px;
   border-bottom: 1.5px solid var(--color-ink);
-  color: var(--color-ink);
   font-family: Georgia, serif;
   font-size: clamp(22px, calc(1vw + 18px), 27px);
   font-weight: normal;
@@ -269,8 +268,6 @@ body {
 
 .main-section article {
   margin: 18px 0 0;
-  color: var(--color-ink);
-  font-size: 16px;
   line-height: 1.75;
 }
 
@@ -298,7 +295,6 @@ body {
 }
 
 .main-section code {
-  color: var(--color-ink);
   font-family: Consolas, "Courier New", monospace;
   font-size: 0.9em;
 }
@@ -448,19 +444,11 @@ kbd {
   .main-section {
     margin-bottom: 20px;
     padding: 21px 19px;
+    scroll-margin-top: 16px;
   }
 }
 
 @media (max-width: 400px) {
-  #main-doc {
-    padding-right: 14px;
-    padding-left: 14px;
-  }
-
-  .page-header {
-    padding: 32px 24px;
-  }
-
   .main-section {
     padding: 18px 15px;
   }

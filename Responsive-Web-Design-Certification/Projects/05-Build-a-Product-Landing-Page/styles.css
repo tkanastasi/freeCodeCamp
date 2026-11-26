@@ -58,9 +58,6 @@ body::after {
   opacity: 0.8;
   pointer-events: none;
   animation: slow-rotate 24s linear infinite;
-}
-
-body::after {
   position: fixed;
   z-index: 0;
   right: 5%;
@@ -194,10 +191,6 @@ main {
 
 .project-header:not([open]) {
   padding-block: 12px;
-}
-
-.project-header:not([open]) .eyebrow {
-  margin-bottom: 0;
 }
 
 .project-header:not([open]) .project-header-toggle {
