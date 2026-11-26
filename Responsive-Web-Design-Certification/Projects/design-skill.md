@@ -4,6 +4,18 @@
 
 Use this guide to keep the five freeCodeCamp projects visually related while letting each project keep a layout that suits its content and interactions. Treat the shared style as a small design system, not a page template.
 
+## Project order and folders
+
+Keep the projects in this order, with a two-digit number, hyphens between words, and title-cased words in each folder name:
+
+1. `01-Build-a-Survey-Form`
+2. `02-Build-a-Page-of-Playing-Cards`
+3. `03-Build-a-Book-Inventory-App`
+4. `04-Build-a-Technical-Documentation-Page`
+5. `05-Build-a-Product-Landing-Page`
+
+Keep these folders directly inside `Projects`.
+
 ## Shared visual language
 
 The projects share an editorial, warm, tactile look:
