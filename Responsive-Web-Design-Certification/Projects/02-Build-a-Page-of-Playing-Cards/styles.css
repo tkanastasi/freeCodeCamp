@@ -13,7 +13,6 @@ body {
   color: #24231f;
   font-family: Arial, sans-serif;
   position: relative;
-  overflow-x: hidden;
 }
 
 .github-source-link {
@@ -55,7 +54,7 @@ body::after {
 header {
   width: 100%;
   margin: 0;
-  padding: 32px 48px;
+  padding: 42px 48px;
   background: #24231f;
   color: #fffefa;
   position: relative;
@@ -134,6 +133,7 @@ header {
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 2px;
+  line-height: 1.5;
 }
 
 .brief-label {
@@ -158,8 +158,8 @@ header h1 {
   max-width: 680px;
   margin: 0;
   color: #d9d5ca;
-  font-size: 17px;
-  line-height: 1.8;
+  font-size: clamp(16px, calc(0.14vw + 15px), 17px);
+  line-height: 1.6;
 }
 
 #playing-cards {
@@ -175,7 +175,7 @@ header h1 {
 }
 
 .playing-card-shell {
-  width: calc(100% - 160px);
+  width: calc(100% - clamp(0px, calc(50vw - 560px), 160px));
   max-width: 1180px;
   margin: 0 auto 45px;
   overflow: hidden;
@@ -335,17 +335,9 @@ header h1 {
     margin: 34px auto 4px;
     writing-mode: horizontal-tb;
   }
-
-  .playing-card-shell {
-    width: calc(100% - 40px);
-  }
 }
 
 @media (max-width: 900px) {
-  .playing-card-shell {
-    width: 100%;
-  }
-
   #playing-cards {
     padding: 24px;
   }
@@ -357,7 +349,7 @@ header h1 {
   }
 
   header {
-    padding: 24px;
+    padding: 32px 24px;
   }
 
   .eyebrow {
@@ -368,10 +360,6 @@ header h1 {
     font-size: 10px;
     letter-spacing: 1.4px;
     line-height: 1.5;
-  }
-
-  .description {
-    font-size: 15px;
   }
 
   #playing-cards {

@@ -99,7 +99,7 @@ body {
   overflow: hidden;
   background: var(--color-off-white);
   border: 2px solid var(--color-ink);
-  border-radius: 24px;
+  border-radius: 28px;
   box-shadow: 8px 8px 0 var(--color-matcha);
 }
 
@@ -108,7 +108,7 @@ body {
   isolation: isolate;
   overflow: hidden;
   margin: 0 0 30px;
-  padding: 44px 46px;
+  padding: 42px 46px;
   background: var(--color-ink);
   border: 2px solid var(--color-ink);
   border-radius: 24px;
@@ -191,7 +191,7 @@ body {
   display: inline-block;
   max-width: 100%;
   margin: 0 0 22px;
-  padding: 6px 12px;
+  padding: 9px 14px;
   background: var(--color-terracotta);
   border-radius: 4px;
   color: var(--color-off-white);
@@ -231,8 +231,8 @@ body {
   max-width: 680px;
   margin: 0;
   color: var(--color-muted-text);
-  font-size: 17px;
-  line-height: 1.65;
+  font-size: clamp(16px, calc(0.14vw + 15px), 17px);
+  line-height: 1.6;
 }
 
 .main-section {
@@ -258,7 +258,7 @@ body {
   border-bottom: 1.5px solid var(--color-ink);
   color: var(--color-ink);
   font-family: Georgia, serif;
-  font-size: 27px;
+  font-size: clamp(22px, calc(1vw + 18px), 27px);
   font-weight: normal;
   line-height: 1.25;
 }
@@ -410,18 +410,17 @@ kbd {
   }
 
   #main-doc {
-    padding: 24px 16px 44px;
+    padding: 24px 14px 44px;
   }
 
   .page-header {
     margin-bottom: 0;
-    padding: 30px 24px;
+    padding: 32px 24px;
     border-radius: 0;
   }
 
   .intro-shell {
     margin-bottom: 20px;
-    border-radius: 20px;
   }
 
   .eyebrow {
@@ -442,40 +441,24 @@ kbd {
     font-size: clamp(36px, 9vw, 52px);
   }
 
-  .description {
-    font-size: 16px;
-  }
-
   .main-section {
     margin-bottom: 20px;
     padding: 21px 19px;
-  }
-
-  .main-section > header {
-    font-size: 24px;
-  }
-
-  .main-section article {
-    font-size: 15px;
   }
 }
 
 @media (max-width: 400px) {
   #main-doc {
-    padding-right: 12px;
-    padding-left: 12px;
+    padding-right: 14px;
+    padding-left: 14px;
   }
 
   .page-header {
-    padding: 26px 18px;
+    padding: 32px 24px;
   }
 
   .main-section {
     padding: 18px 15px;
-  }
-
-  .main-section > header {
-    font-size: 22px;
   }
 
   .main-section article > pre {

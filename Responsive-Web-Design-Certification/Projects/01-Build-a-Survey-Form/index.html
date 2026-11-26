@@ -74,14 +74,14 @@
         margin: 0 auto 38px;
         background: #fffefa;
         border: 2px solid #24231f;
-        border-radius: 24px;
+        border-radius: 28px;
         box-shadow: 8px 8px 0 #a3ad7d;
       }
 
       header {
         overflow: hidden;
         margin: 0;
-        padding: 48px;
+        padding: 42px 48px;
         background: #24231f;
         color: #f7f4ec;
         border: 0;
@@ -156,13 +156,14 @@
       .eyebrow {
         display: inline-block;
         margin: 0 0 22px;
-        padding: 6px 12px;
+        padding: 9px 14px;
         background: #b96347;
         border-radius: 4px;
-        color: #fffaf2;
+        color: #fffefa;
         font-size: 11px;
         font-weight: 600;
         letter-spacing: 2px;
+        line-height: 1.5;
       }
 
       #title {
@@ -171,7 +172,7 @@
         max-width: 750px;
         margin: 0 0 16px;
         font-family: Georgia, serif;
-        font-size: clamp(38px, 6vw, 68px);
+        font-size: clamp(36px, 6vw, 68px);
         font-weight: normal;
         line-height: 1.05;
         letter-spacing: -2px;
@@ -183,7 +184,8 @@
         max-width: 570px;
         margin: 0;
         color: #d9d5ca;
-        font-size: 17px;
+        font-size: clamp(16px, calc(0.14vw + 15px), 17px);
+        line-height: 1.6;
       }
 
       .brief-label {
@@ -212,7 +214,7 @@
         margin: 0 0 28px;
         color: #24231f;
         font-family: Georgia, serif;
-        font-size: 23px;
+        font-size: clamp(21px, calc(0.28vw + 19px), 23px);
         font-weight: 600;
         line-height: 1.35;
       }
@@ -505,23 +507,11 @@
         .eyebrow {
           position: relative;
           z-index: 1;
-          max-width: calc(100% - 58px);
+          max-width: calc(100% - 40px);
           padding: 6px 9px;
           font-size: 10px;
           letter-spacing: 1.4px;
           line-height: 1.5;
-        }
-
-        #title {
-          font-size: 42px;
-        }
-
-        #description {
-          font-size: 16px;
-        }
-
-        .form-intro {
-          font-size: 21px;
         }
 
         #survey-form {
@@ -554,9 +544,6 @@
           grid-template-columns: 1fr;
         }
 
-        #title {
-          font-size: 36px;
-        }
       }
 
       @media (prefers-reduced-motion: reduce) {

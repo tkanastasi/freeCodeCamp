@@ -79,7 +79,7 @@ body::after {
   overflow: hidden;
   background: var(--color-off-white);
   border: 2px solid var(--color-ink);
-  border-radius: 24px;
+  border-radius: 28px;
   box-shadow: 8px 8px 0 var(--color-matcha);
 }
 
@@ -93,7 +93,7 @@ header,
 
 header {
   overflow: hidden;
-  padding: 48px;
+  padding: 42px 48px;
   background: var(--color-ink);
   color: var(--color-paper);
   border: 0;
@@ -169,13 +169,14 @@ header:has(.project-disclosure:not([open])) {
   z-index: 1;
   display: inline-block;
   margin: 0 0 22px;
-  padding: 6px 12px;
+  padding: 9px 14px;
   background: var(--color-terracotta);
   border-radius: 4px;
   color: var(--color-off-white);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 2px;
+  line-height: 1.5;
 }
 
 h1 {
@@ -183,7 +184,7 @@ h1 {
   z-index: 1;
   margin: 0 0 18px;
   font-family: Georgia, serif;
-  font-size: clamp(38px, 6vw, 68px);
+  font-size: clamp(42px, 6vw, 68px);
   font-weight: normal;
   line-height: 1.05;
   letter-spacing: -2px;
@@ -205,7 +206,7 @@ h1 {
   max-width: 680px;
   margin: 0;
   color: var(--color-muted-text);
-  font-size: 17px;
+  font-size: clamp(16px, calc(0.14vw + 15px), 17px);
   line-height: 1.6;
 }
 
@@ -424,7 +425,7 @@ span[class~="three"] span {
 
 @media (max-width: 700px) {
   body {
-    padding: 20px;
+    padding: 20px 14px;
   }
 
   header {
@@ -438,14 +439,6 @@ span[class~="three"] span {
     font-size: 10px;
     letter-spacing: 1.4px;
     line-height: 1.5;
-  }
-
-  h1 {
-    font-size: 42px;
-  }
-
-  .description {
-    font-size: 16px;
   }
 
   .inventory-panel {
@@ -483,13 +476,7 @@ span[class~="three"] span {
 
 @media (max-width: 400px) {
   header {
-    padding: 28px 18px;
-  }
-
-  .eyebrow {
-    padding: 6px 8px;
-    font-size: 10px;
-    letter-spacing: 1px;
+    padding: 32px 24px;
   }
 }
 
