@@ -14,7 +14,7 @@ Keep the projects in this order, with a two-digit number, hyphens between words,
 4. `04-Build-a-Technical-Documentation-Page`
 5. `05-Build-a-Product-Landing-Page`
 
-Keep these folders directly inside `Projects`.
+Keep these folders directly inside `Responsive-Web-Design-Certification`.
 
 ## Shared visual language
 
