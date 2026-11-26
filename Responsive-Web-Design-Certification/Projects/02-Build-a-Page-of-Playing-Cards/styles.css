@@ -14,7 +14,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.github-source-link {
+.projects-home-link {
   position: fixed;
   z-index: 2;
   left: 24px;
@@ -29,11 +29,11 @@ body {
   text-decoration: none;
 }
 
-.github-source-link:hover {
+.projects-home-link:hover {
   color: #24231f;
 }
 
-.github-source-link:focus-visible {
+.projects-home-link:focus-visible {
   outline: 3px solid #b96347;
   outline-offset: 4px;
 }
@@ -329,7 +329,7 @@ header h1 {
 }
 
 @media (max-width: 1200px) {
-  .github-source-link {
+  .projects-home-link {
     position: static;
     display: block;
     width: fit-content;
