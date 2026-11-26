@@ -39,7 +39,6 @@ body {
 }
 
 .eyebrow,
-.course-number,
 .course-action,
 .sidebar-meta {
   font-size: 11px;
@@ -86,7 +85,7 @@ h1 {
 
 .page-content {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   width: min(100%, 1200px);
   min-height: 100vh;
   margin: 0 auto;
@@ -96,7 +95,7 @@ h1 {
 .course-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
+  align-items: start;
   gap: 20px;
   width: 100%;
   min-height: 50vh;
@@ -108,13 +107,16 @@ h1 {
 }
 
 .course-action {
+  margin-top: 5px;
   color: var(--color-accent);
+  text-decoration: none;
 }
 
 .course-title {
   display: block;
-  font-size: 23px;
-  line-height: 1.3;
+  font-size: clamp(30px, 3vw, 42px);
+  line-height: 1.15;
+  letter-spacing: -1px;
   transition: color 0.2s;
 }
 
@@ -133,14 +135,132 @@ h1 {
   white-space: nowrap;
 }
 
-.course-card:hover .course-title,
-.course-card:hover .course-action {
+.course-action:hover,
+.course-action:focus-visible {
   color: var(--color-accent);
 }
 
-.course-card:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 8px;
+.activity {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.activity-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.activity-heading h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.activity-chart {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.activity-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.activity-map-month {
+  fill: var(--color-muted);
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+.activity-map rect {
+  stroke: var(--color-background);
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+  cursor: pointer;
+}
+
+.activity-map rect:hover,
+.activity-map rect:focus {
+  stroke: var(--color-text);
+  stroke-width: 2;
+}
+
+.activity-map .color-empty {
+  fill: #30302d;
+}
+
+.activity-map .color-low {
+  fill: #686963;
+}
+
+.activity-map .color-mid {
+  fill: #888a7d;
+}
+
+.activity-map .color-high {
+  fill: #a3ad7d;
+}
+
+.activity-map .color-higher {
+  fill: #c0c59e;
+}
+
+.activity-map .color-strong {
+  fill: #d8dbc7;
+}
+
+.activity-map .color-max {
+  fill: #f2f1ed;
+}
+
+.activity-tooltip {
+  position: absolute;
+  z-index: 1;
+  padding: 9px 13px;
+  transform: translate(-50%, calc(-100% - 9px));
+  border: 1px solid var(--color-text);
+  border-radius: 3px;
+  background: var(--color-ink, #24231f);
+  color: var(--color-text);
+  font-size: 13px;
+  line-height: 1.3;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.activity-tooltip::after {
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  transform: translateX(-50%) rotate(45deg);
+  border-right: 1px solid var(--color-text);
+  border-bottom: 1px solid var(--color-text);
+  background: var(--color-ink, #24231f);
+  content: "";
+}
+
+.activity-tooltip[hidden] {
+  display: none;
+}
+
+.activity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.activity-range {
+  margin: 0;
+  color: var(--color-muted);
+  text-align: center;
 }
 
 @media (max-width: 800px) {
@@ -188,7 +308,19 @@ h1 {
   }
 
   .course-title {
-    font-size: 20px;
+    font-size: 25px;
+  }
+
+  .activity {
+    order: 2;
+  }
+
+  .course-action {
+    order: 3;
+  }
+
+  .activity-range {
+    font-size: 14px;
   }
 
   .course-action {

@@ -85,8 +85,9 @@ h1 {
   color: var(--color-muted);
 }
 
-.eyebrow a {
-  color: inherit;
+.eyebrow a,
+.eyebrow a:visited {
+  color: var(--color-text);
   text-decoration: none;
 }
 
