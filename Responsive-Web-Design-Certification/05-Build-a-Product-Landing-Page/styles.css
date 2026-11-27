@@ -674,6 +674,10 @@ footer p {
 }
 
 @media (max-width: 1200px) {
+  body {
+    padding-bottom: 40px;
+  }
+
   .projects-home-link {
     position: static;
     display: block;
@@ -723,6 +727,7 @@ footer p {
 
   body {
     padding-top: 112px;
+    padding-bottom: 20px;
   }
 
   .nav-inner,
