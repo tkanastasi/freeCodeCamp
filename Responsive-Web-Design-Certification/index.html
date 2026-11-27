@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Web Design</title>
     <link rel="icon" type="image/png" href="../freecodecamp-favicon.png">
-    <link rel="stylesheet" href="./styles.css?v=20261127-2">
+    <link rel="stylesheet" href="./styles.css?v=20261127-13">
   </head>
 
   <body>
@@ -19,14 +19,14 @@
           and develop the skills to create clear, user-friendly webpages.
         </p>
         <div class="sidebar-meta">
-          <span>Skills</span>
+          <span class="skills-title">Skills</span>
           <ul class="skill-list">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Accessibility</li>
-            <li>Flexbox</li>
-            <li>Responsive design</li>
-            <li>Forms</li>
+            <li><button type="button" data-skill="html-css" aria-pressed="false">HTML / CSS</button></li>
+            <li><button type="button" data-skill="grid" aria-pressed="false">Grid</button></li>
+            <li><button type="button" data-skill="flexbox" aria-pressed="false">Flexbox</button></li>
+            <li><button type="button" data-skill="forms" aria-pressed="false">Forms</button></li>
+            <li><button type="button" data-skill="tables" aria-pressed="false">Tables</button></li>
+            <li><button type="button" data-skill="navigation" aria-pressed="false">Navigation</button></li>
           </ul>
         </div>
       </aside>
@@ -37,7 +37,7 @@
         </header>
 
         <section class="project-list" aria-label="Certification projects">
-          <a class="project-card" href="./01-Build-a-Survey-Form/index.html">
+          <a class="project-card" data-skills="html-css grid flexbox forms" href="./01-Build-a-Survey-Form/index.html">
             <span class="project-number">01</span>
             <span class="project-info">
               <span class="project-title">Hiking Experience Survey</span>
@@ -45,7 +45,7 @@
             </span>
           </a>
 
-          <a class="project-card" href="./02-Build-a-Page-of-Playing-Cards/index.html">
+          <a class="project-card" data-skills="html-css flexbox" href="./02-Build-a-Page-of-Playing-Cards/index.html">
             <span class="project-number">02</span>
             <span class="project-info">
               <span class="project-title">The Card Table</span>
@@ -53,7 +53,7 @@
             </span>
           </a>
 
-          <a class="project-card" href="./03-Build-a-Book-Inventory-App/index.html">
+          <a class="project-card" data-skills="html-css tables" href="./03-Build-a-Book-Inventory-App/index.html">
             <span class="project-number">03</span>
             <span class="project-info">
               <span class="project-title">Book Inventory</span>
@@ -61,7 +61,7 @@
             </span>
           </a>
 
-          <a class="project-card" href="./04-Build-a-Technical-Documentation-Page/index.html">
+          <a class="project-card" data-skills="html-css navigation" href="./04-Build-a-Technical-Documentation-Page/index.html">
             <span class="project-number">04</span>
             <span class="project-info">
               <span class="project-title">JavaScript Documentation</span>
@@ -69,7 +69,7 @@
             </span>
           </a>
 
-          <a class="project-card" href="./05-Build-a-Product-Landing-Page/index.html">
+          <a class="project-card" data-skills="html-css grid flexbox forms navigation" href="./05-Build-a-Product-Landing-Page/index.html">
             <span class="project-number">05</span>
             <span class="project-info">
               <span class="project-title">Product Landing Page</span>
@@ -80,5 +80,30 @@
 
       </main>
     </div>
+    <script>
+      const skillButtons = document.querySelectorAll(".skill-list button");
+      const projectCards = document.querySelectorAll(".project-card");
+      let selectedSkill = null;
+
+      function highlightProjects(skill) {
+        projectCards.forEach((project) => {
+          project.classList.toggle("is-highlighted", skill && project.dataset.skills.split(" ").includes(skill));
+        });
+      }
+
+      skillButtons.forEach((button) => {
+        button.addEventListener("mouseenter", () => highlightProjects(button.dataset.skill));
+        button.addEventListener("mouseleave", () => highlightProjects(selectedSkill));
+        button.addEventListener("focus", () => highlightProjects(button.dataset.skill));
+        button.addEventListener("blur", () => highlightProjects(selectedSkill));
+        button.addEventListener("click", () => {
+          selectedSkill = selectedSkill === button.dataset.skill ? null : button.dataset.skill;
+          skillButtons.forEach((skillButton) => {
+            skillButton.setAttribute("aria-pressed", skillButton.dataset.skill === selectedSkill);
+          });
+          highlightProjects(selectedSkill);
+        });
+      });
+    </script>
   </body>
 </html>

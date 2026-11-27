@@ -53,15 +53,23 @@ body {
   color: var(--color-muted);
 }
 
-.portfolio-sidebar .eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.portfolio-sidebar .eyebrow,
+.skills-title {
   font-family: Arial, sans-serif;
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0;
   text-transform: none;
+}
+
+.skills-title {
+  font-size: 16px;
+}
+
+.portfolio-sidebar .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .breadcrumb-wordmark {
@@ -106,9 +114,9 @@ h1 {
 }
 
 .skill-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 14px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
   margin: 12px 0 0;
   padding: 0;
   color: var(--color-muted);
@@ -120,10 +128,26 @@ h1 {
 }
 
 .skill-list li {
-  padding: 5px 10px;
+  padding: 0;
+}
+
+.skill-list button {
+  width: 100%;
+  padding: 8px 5px;
   border: 1px solid var(--color-line);
   border-radius: 4px;
   background: var(--color-panel);
+  color: inherit;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.skill-list button:hover,
+.skill-list button:focus-visible,
+.skill-list button[aria-pressed="true"] {
+  border-color: var(--color-accent);
+  color: var(--color-text);
 }
 
 .eyebrow a,
@@ -190,12 +214,17 @@ h2 {
   gap: 12px;
   padding: 16px;
   border: 1px solid var(--color-line);
+  border-radius: 4px;
   color: inherit;
   text-decoration: none;
+  transition: border-color 0.2s, background-color 0.2s;
 }
 
 .project-number {
-  color: var(--color-accent);
+  color: #d5d4ce;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
 }
 
 .project-title {
@@ -217,6 +246,11 @@ h2 {
   background: var(--color-panel);
 }
 
+.project-card.is-highlighted {
+  border-color: #68704e;
+  background: #22231e;
+}
+
 .project-card:hover .project-title {
   color: var(--color-accent);
 }
@@ -234,7 +268,7 @@ h2 {
   color: var(--color-muted);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
   .portfolio-layout {
     grid-template-columns: 1fr;
   }
@@ -264,9 +298,6 @@ h2 {
     padding: 40px 28px;
   }
 
-  .project-list {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 520px) {
@@ -277,16 +308,25 @@ h2 {
   }
 
   .project-card {
-    grid-template-columns: 34px minmax(0, 1fr);
-    gap: 12px;
-    padding: 22px 0;
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .skill-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-list {
+    grid-template-columns: 1fr;
   }
 
   .project-title {
     font-size: 20px;
   }
 
-  .portfolio-sidebar .eyebrow {
+  .portfolio-sidebar .eyebrow,
+  .skills-title {
     font-size: 16px;
   }
 
