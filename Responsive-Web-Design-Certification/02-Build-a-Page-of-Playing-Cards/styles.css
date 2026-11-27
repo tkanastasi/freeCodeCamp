@@ -309,7 +309,8 @@ header h1 {
 #playing-cards:has(#hearts:checked) .card:not(.hearts),
 #playing-cards:has(#clubs:checked) .card:not(.clubs),
 #playing-cards:has(#diamonds:checked) .card:not(.diamonds) {
-  display: none;
+  position: absolute;
+  visibility: hidden;
 }
 
 @keyframes slow-rotate {

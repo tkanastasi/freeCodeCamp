@@ -98,10 +98,18 @@ main,
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   color: var(--color-off-white);
   font-family: Georgia, serif;
   font-size: 25px;
   text-decoration: none;
+}
+
+.logo img {
+  width: 26px;
+  height: 26px;
 }
 
 .logo-accent {

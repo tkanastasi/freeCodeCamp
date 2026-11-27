@@ -305,24 +305,40 @@ span[class="status"] {
   border-radius: 999px;
 }
 
+tr[class="read"] {
+  background-image: linear-gradient(to right, #fafbf6, var(--color-off-white));
+}
+
+tr[class="to-read"] {
+  background-image: linear-gradient(to right, #f8fafb, var(--color-off-white));
+}
+
+tr[class="in-progress"] {
+  background-image: linear-gradient(to right, #fcf8f5, var(--color-off-white));
+}
+
 tr[class="read"] span[class="status"] {
-  background-color: var(--status-read-pill);
+  border: 1px solid transparent;
+  background-image: linear-gradient(to bottom, var(--status-read-pill), var(--status-read-pill));
   color: var(--status-read-ink);
 }
 
 tr[class="to-read"] span[class="status"] {
-  background-color: var(--status-to-read-pill);
+  border: 1px solid transparent;
+  background-image: linear-gradient(to bottom, var(--status-to-read-pill), var(--status-to-read-pill));
   color: var(--status-to-read-ink);
 }
 
 tr[class="in-progress"] span[class="status"] {
-  background-color: var(--status-in-progress-pill);
+  border: 1px solid transparent;
+  background-image: linear-gradient(to bottom, var(--status-in-progress-pill), var(--status-in-progress-pill));
   color: var(--status-in-progress-ink);
 }
 
 span[class="status"],
 span[class^="rate"] {
   height: 30px;
+  width: 90px;
   padding: 5px 10px;
 }
 
@@ -356,8 +372,14 @@ span[class^="rate"] > span {
   vertical-align: middle;
 }
 
-span[class~="one"] > span:first-child,
-span[class~="two"] > span:nth-child(-n+2),
+span[class~="one"] > span:first-child {
+  background-image: linear-gradient(135deg, var(--color-terracotta), #8f4937);
+}
+
+span[class~="two"] > span:nth-child(-n+2) {
+  background-image: linear-gradient(135deg, var(--color-terracotta), #8f4937);
+}
+
 span[class~="three"] span {
   background-image: linear-gradient(135deg, var(--color-terracotta), #8f4937);
 }
