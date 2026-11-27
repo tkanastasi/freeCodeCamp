@@ -40,7 +40,6 @@ body {
 .eyebrow,
 .section-index,
 .project-number,
-.project-link,
 .sidebar-meta,
 .portfolio-footer {
   font-size: 11px;
@@ -52,6 +51,30 @@ body {
 .eyebrow {
   margin: 0 0 48px;
   color: var(--color-muted);
+}
+
+.portfolio-sidebar .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.breadcrumb-wordmark {
+  display: inline-block;
+  flex: none;
+  height: 18px;
+  vertical-align: middle;
+}
+
+.breadcrumb-wordmark img {
+  display: block;
+  width: 157.5px;
+  height: 18px;
 }
 
 h1,
@@ -76,13 +99,31 @@ h1 {
 }
 
 .sidebar-meta {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
   margin-top: auto;
   padding-top: 20px;
   border-top: 1px solid var(--color-line);
   color: var(--color-muted);
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin: 12px 0 0;
+  padding: 0;
+  color: var(--color-muted);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  list-style: none;
+  text-transform: none;
+}
+
+.skill-list li {
+  padding: 5px 10px;
+  border: 1px solid var(--color-line);
+  border-radius: 4px;
+  background: var(--color-panel);
 }
 
 .eyebrow a,
@@ -103,7 +144,7 @@ h1 {
 }
 
 .section-heading {
-  margin-bottom: 44px;
+  margin-bottom: 24px;
 }
 
 .section-index {
@@ -136,50 +177,47 @@ h2 {
   color: var(--color-muted);
 }
 
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
 .project-card {
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr) auto;
+  grid-template-columns: 28px minmax(0, 1fr);
   align-items: start;
-  gap: 20px;
-  padding: 16px 0;
-  border-top: 1px solid var(--color-line);
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--color-line);
   color: inherit;
   text-decoration: none;
 }
 
-.project-card:last-child {
-  border-bottom: 1px solid var(--color-line);
-}
-
-.project-number,
-.project-link {
+.project-number {
   color: var(--color-accent);
 }
 
 .project-title {
   display: block;
-  font-size: 21px;
+  font-size: 23px;
   line-height: 1.3;
   transition: color 0.2s;
 }
 
 .project-description {
   display: block;
-  max-width: 620px;
   margin-top: 7px;
   color: var(--color-muted);
   font-size: 14px;
+  line-height: 1.45;
 }
 
-.project-link {
-  padding-top: 3px;
-  color: var(--color-muted);
-  letter-spacing: 1px;
-  white-space: nowrap;
+.project-card:hover {
+  background: var(--color-panel);
 }
 
-.project-card:hover .project-title,
-.project-card:hover .project-link {
+.project-card:hover .project-title {
   color: var(--color-accent);
 }
 
@@ -225,6 +263,10 @@ h2 {
   .portfolio-main {
     padding: 40px 28px;
   }
+
+  .project-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 520px) {
@@ -241,12 +283,20 @@ h2 {
   }
 
   .project-title {
-    font-size: 19px;
+    font-size: 20px;
   }
 
-  .project-link {
-    grid-column: 2;
-    padding-top: 0;
+  .portfolio-sidebar .eyebrow {
+    font-size: 16px;
+  }
+
+  .breadcrumb-wordmark {
+    height: 16px;
+  }
+
+  .breadcrumb-wordmark img {
+    width: 140px;
+    height: 16px;
   }
 
   .portfolio-footer {
