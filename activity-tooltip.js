@@ -34,7 +34,7 @@ for (let dayOfYear = 0; dayOfYear < daysInYear; dayOfYear += 1) {
   const cell = document.createElementNS(svgNamespace, "rect");
   const formattedDate = date.toLocaleDateString("en-US", { timeZone: "UTC", month: "short", day: "numeric", year: "numeric" });
   const isExamDate = dateKey === examDate;
-  const label = isExamDate ? `Certification exam on ${formattedDate}` : `${score} points on ${formattedDate}`;
+  const label = isExamDate ? `Certification exam on ${formattedDate} 🎉` : `${score} points on ${formattedDate}`;
   const calendarDay = dayOfYear + weekOffset;
 
   cell.setAttribute("class", `color-${getActivityLevel(score)}${isExamDate ? " exam-day" : ""}`);
