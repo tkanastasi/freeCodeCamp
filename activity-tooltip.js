@@ -2,7 +2,7 @@ const chart = document.querySelector(".activity-chart");
 const heatmap = document.querySelector(".activity-map");
 const tooltip = document.querySelector(".activity-tooltip");
 const range = document.querySelector(".activity-range");
-const { year, points } = window.activityData;
+const { year, points, examDate } = window.activityData;
 const yearStart = new Date(Date.UTC(year, 0, 1));
 const daysInYear = (Date.UTC(year + 1, 0, 1) - yearStart) / 86400000;
 const weekOffset = (yearStart.getUTCDay() + 6) % 7;
@@ -32,10 +32,12 @@ for (let dayOfYear = 0; dayOfYear < daysInYear; dayOfYear += 1) {
   const dateKey = date.toISOString().slice(0, 10);
   const score = points[dateKey] || 0;
   const cell = document.createElementNS(svgNamespace, "rect");
-  const label = `${score} points on ${date.toLocaleDateString("en-US", { timeZone: "UTC", month: "short", day: "numeric", year: "numeric" })}`;
+  const formattedDate = date.toLocaleDateString("en-US", { timeZone: "UTC", month: "short", day: "numeric", year: "numeric" });
+  const isExamDate = dateKey === examDate;
+  const label = isExamDate ? `Certification exam on ${formattedDate}` : `${score} points on ${formattedDate}`;
   const calendarDay = dayOfYear + weekOffset;
 
-  cell.setAttribute("class", `color-${getActivityLevel(score)}`);
+  cell.setAttribute("class", `color-${getActivityLevel(score)}${isExamDate ? " exam-day" : ""}`);
   cell.setAttribute("x", String(Math.floor(calendarDay / 7) * 11));
   cell.setAttribute("y", String(14 + (calendarDay % 7) * 11));
   cell.setAttribute("width", "10");
@@ -44,15 +46,13 @@ for (let dayOfYear = 0; dayOfYear < daysInYear; dayOfYear += 1) {
   cell.setAttribute("data-tip", label);
   cell.setAttribute("aria-label", label);
 
-  const title = document.createElementNS(svgNamespace, "title");
-  title.textContent = label;
-  cell.append(title);
   cell.addEventListener("mouseenter", () => showTooltip(cell, label));
   cell.addEventListener("focus", () => showTooltip(cell, label));
   cell.addEventListener("mouseleave", hideTooltip);
   cell.addEventListener("blur", hideTooltip);
   heatmap.append(cell);
 }
+
 
 function getActivityLevel(score) {
   if (score === 0) return "empty";
@@ -67,7 +67,6 @@ function getActivityLevel(score) {
 function showTooltip(cell, label) {
   const cellBounds = cell.getBoundingClientRect();
   const chartBounds = chart.getBoundingClientRect();
-
   tooltip.textContent = label;
   tooltip.hidden = false;
 

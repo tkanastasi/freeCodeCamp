@@ -194,6 +194,24 @@ h1 a {
   stroke-width: 2;
 }
 
+.activity-map rect.exam-day {
+  fill: #e5c96f;
+  animation: exam-shimmer 1.8s ease-in-out 1;
+}
+
+@keyframes exam-shimmer {
+  0%,
+  100% {
+    fill: #e5c96f;
+    filter: drop-shadow(0 0 0 transparent);
+  }
+
+  45% {
+    fill: #fff6d8;
+    filter: drop-shadow(0 0 6px #e5c96f);
+  }
+}
+
 .activity-map .color-empty {
   fill: #30302d;
 }

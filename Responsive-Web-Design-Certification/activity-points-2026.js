@@ -1,5 +1,6 @@
 window.activityData = {
   year: 2026,
+  examDate: "2026-11-27",
   points: {
     "2026-02-03": 16,
     "2026-03-31": 69,
