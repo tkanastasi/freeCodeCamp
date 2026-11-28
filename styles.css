@@ -290,6 +290,14 @@ h1 a {
   margin-top: 10px;
 }
 
+.activity-nav {
+  display: none;
+}
+
+.activity-nav[hidden] {
+  display: none;
+}
+
 .activity-range {
   margin: 0;
   color: var(--color-muted);
@@ -342,6 +350,25 @@ h1 a {
 
   .activity {
     order: 2;
+  }
+
+  .activity-controls {
+    gap: 10px;
+  }
+
+  .activity-nav {
+    display: grid;
+    place-items: center;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 1px solid var(--color-line);
+    background: transparent;
+    color: var(--color-text);
+    font: inherit;
+    line-height: 1;
+    cursor: pointer;
   }
 
   .activity-range {
